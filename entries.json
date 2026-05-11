@@ -8,7 +8,8 @@
     "titel": "Reihenendhaus in idyllischer Lage inkl. Taunusblick",
     "link": "https://www.immobilienscout24.de/expose/166992150",
     "img": "https://pictures.immobilienscout24.de/listings/2a80515a-daea-4725-9d86-2285c7c52f62-2014511272.jpg",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor einem Monat"
   },
   {
     "id": "166930009",
@@ -19,7 +20,9 @@
     "titel": "Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz",
     "link": "https://www.immobilienscout24.de/expose/166930009",
     "img": "https://pictures.immobilienscout24.de/listings/58b87e07-56d0-4897-8498-206fe70aa626-2013437263.jpg",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor einem Monat",
+    "stadtteil": "Petterweil"
   },
   {
     "city": "Karben",
@@ -29,7 +32,9 @@
     "titel": "Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz",
     "link": "https://www.kleinanzeigen.de/s-anzeige/karben-petterweil-familienfreundliches-reihenendhaus-mit-garten-und-viel-platz/3380673586-208-4526",
     "adid": "3380673586",
-    "quelle": "Kleinanzeigen"
+    "quelle": "Kleinanzeigen",
+    "img": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/90/90334867-e742-441b-8121-66f9f1614d20?rule=$_59.JPG",
+    "stadtteil": "Petterweil"
   },
   {
     "city": "Karben",
@@ -39,7 +44,9 @@
     "titel": "Haus Nieder Mockstadt",
     "link": "https://www.kleinanzeigen.de/s-anzeige/haus-nieder-mockstadt/3380688412-208-4526",
     "adid": "3380688412",
-    "quelle": "Kleinanzeigen"
+    "quelle": "Kleinanzeigen",
+    "img": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/03/034138f5-0daa-4ddb-ae9a-1533dd15d105?rule=$_59.JPG",
+    "stadtteil": "Nieder Mockstadt"
   },
   {
     "id": "159627742",
@@ -50,7 +57,9 @@
     "titel": "Nur noch 1 charmantes RMH verfügbar, Ihr neues Zuhause wartet auf Sie in Karben OT Rendel",
     "link": "https://www.immobilienscout24.de/expose/159627742",
     "img": "https://pictures.immobilienscout24.de/listings/4b3dc4fc-69e4-4072-a85d-8bd16c6b65d4-1910476818.jpg",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor einem Jahr",
+    "stadtteil": "Rendel"
   },
   {
     "id": "162463213",
@@ -61,7 +70,8 @@
     "titel": "Lage Lage Lage – ruhige Feldrandlage",
     "link": "https://www.immobilienscout24.de/expose/162463213",
     "img": "https://pictures.immobilienscout24.de/listings/f3f5aaa3-4dc0-4500-a845-95bc4474ca7f-2005161638.jpg",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor 6 Monaten"
   },
   {
     "city": "Karben",
@@ -71,7 +81,8 @@
     "titel": "* * * Lage Lage Lage * * *  Wenn Ihnen die Lage wichtig ist   * Ruhige Feldrand Lage *",
     "link": "https://www.kleinanzeigen.de/s-anzeige/-lage-lage-lage-wenn-ihnen-die-lage-wichtig-ist-ruhige-feldrand-lage-/3228730368-208-4526",
     "adid": "3228730368",
-    "quelle": "Kleinanzeigen"
+    "quelle": "Kleinanzeigen",
+    "img": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/64/646c8249-5b88-4027-bba7-584be9f82fed?rule=$_59.JPG"
   },
   {
     "city": "Karben",
@@ -81,7 +92,8 @@
     "titel": "Reihenmittelhaus in Karben – 144 m², 5 Zimmer | VHB 565.000 €",
     "link": "https://www.kleinanzeigen.de/s-anzeige/reihenmittelhaus-in-karben-144-m-5-zimmer-vhb-565-000-/3387043884-208-4526",
     "adid": "3387043884",
-    "quelle": "Kleinanzeigen"
+    "quelle": "Kleinanzeigen",
+    "img": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/15/156edb44-9408-43b6-85d6-88d8d4a2b222?rule=$_59.JPG"
   },
   {
     "city": "Karben",
@@ -91,7 +103,9 @@
     "titel": "*Wohnen mit Freunden in Karben-Petterweil?* GROßE DOPPELHAUSHÄLFTE auf 250m² Grundstück",
     "link": "https://www.kleinanzeigen.de/s-anzeige/-wohnen-mit-freunden-in-karben-petterweil-grosse-doppelhaushaelfte-auf-250m-grundstueck/3334314965-208-4526",
     "adid": "3334314965",
-    "quelle": "Kleinanzeigen"
+    "quelle": "Kleinanzeigen",
+    "img": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/c0/c0222c20-0ed0-49d3-9800-93e18edf737c?rule=$_59.JPG",
+    "stadtteil": "Petterweil"
   },
   {
     "id": "154633802",
@@ -102,7 +116,8 @@
     "titel": "Abrisshaus mit großem und schönem Grundstück in Top Lage",
     "link": "https://www.immobilienscout24.de/expose/154633802",
     "img": "https://pictures.immobilienscout24.de/listings/3e125b55-c60d-49af-870d-e1192aadefe4-1852661737.jpeg",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor 2 Jahren"
   },
   {
     "id": "is24-Karben-hierwerdenwohntru",
@@ -124,7 +139,8 @@
     "titel": "Kernsaniertes 1–2-Familienhaus mit PV, Speicher & Brunnen",
     "link": "https://www.immobilienscout24.de/expose/167361279",
     "img": "https://pictures.immobilienscout24.de/listings/2a3a513e-b1f4-489f-8087-64d30df5280e-2021095757.jpg",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor 11 Tagen"
   },
   {
     "id": "167440501",
@@ -135,7 +151,8 @@
     "titel": "Bad Vilbel: Gepflegtes Stadthaus mit viel Platz!",
     "link": "https://www.immobilienscout24.de/expose/167440501",
     "img": "https://pictures.immobilienscout24.de/listings/0ea7d5a0-9264-4228-b80e-6029df9178c5-2022376492.png",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor 7 Tagen"
   },
   {
     "id": "166986360",
@@ -146,7 +163,8 @@
     "titel": "Reihenmittelhaus mit Garten, Balkon und Keller in Toplage",
     "link": "https://www.immobilienscout24.de/expose/166986360",
     "img": "https://pictures.immobilienscout24.de/listings/0f82c48c-ada4-46fc-b6c5-8806b2b436bb-2014378820.png",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor einem Monat"
   },
   {
     "id": "166955601",
@@ -157,7 +175,9 @@
     "titel": "Ruhige Top-Lage! Gemütliches EFH mit Einliegerwohnung in Lorsbach",
     "link": "https://www.immobilienscout24.de/expose/166955601",
     "img": "https://pictures.immobilienscout24.de/listings/27af6eaf-5cb1-47a2-a31c-bf560e438725-2013912471.jpg",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor einem Monat",
+    "stadtteil": "Lorsbach"
   },
   {
     "id": "167360421",
@@ -190,7 +210,8 @@
     "titel": "Wohnen am Feldrand in Hofheim – modernes Zuhause mit Südterrasse & Balkon",
     "link": "https://www.immobilienscout24.de/expose/165971693",
     "img": "https://pictures.immobilienscout24.de/listings/1b137cfd-b91f-491d-b39d-4222f224d826-1996591097.jpg",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor 2 Monaten"
   },
   {
     "id": "151591929",
@@ -201,6 +222,7 @@
     "titel": "Großzügiges Einfamilienhaus mit wunderschönem Garten",
     "link": "https://www.immobilienscout24.de/expose/151591929",
     "img": "https://pictures.immobilienscout24.de/listings/e52c786c-a9f7-486b-acde-07b65f06d9f0-1945335703.jpg",
-    "quelle": "ImmoScout24"
+    "quelle": "ImmoScout24",
+    "published": "vor 2 Jahren"
   }
 ]
