@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Archiv – Immobiliensuche</title>
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Archiv · Immobiliensuche</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -83,6 +78,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 }
 .badge-is24{background:rgba(108,138,255,0.15);color:var(--accent)}
 .badge-ka{background:rgba(255,108,138,0.12);color:var(--accent2)}
+.badge-imde{background:rgba(74,222,128,0.12);color:#4ade80}
 .card-link{
   font-size:12px;color:var(--accent);text-decoration:none;font-weight:500;
   display:flex;align-items:center;gap:4px;transition:color .15s;
@@ -90,6 +86,8 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 .card-link:hover{color:#8ba4ff}
 .card-link.ka{color:var(--accent2)}
 .card-link.ka:hover{color:#ff8a9e}
+.card-link.imde{color:#4ade80}
+.card-link.imde:hover{color:#6ee7a0}
 .read-btn{
   position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;
   border:2px solid var(--border);background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);
@@ -105,8 +103,6 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 .card.karben{border-left:3px solid var(--karben)}
 .card.vilbel{border-left:3px solid var(--vilbel)}
 .card.hofheim{border-left:3px solid var(--hofheim)}
-.card .read-btn{display:none}
-.card.read{opacity:.6;filter:grayscale(.4)}
 .nav-link{color:var(--accent);text-decoration:none;font-size:13px;font-weight:500;padding:6px 12px;border-radius:20px;border:1px solid var(--border);transition:all .15s}
 .nav-link:hover{background:var(--surface);border-color:var(--accent)}
 .archive-badge{background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:12px;font-size:11px;color:var(--muted)}
@@ -115,22 +111,37 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 .stadtteil-badge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:10px;background:rgba(255,255,255,0.08);color:#a0a0b8;margin-right:4px}
 .alter-info{font-size:10px;color:#6a6a7a}
 .card-extras{padding:0 12px 4px 12px;display:flex;align-items:center;gap:4px;flex-wrap:wrap}
-</style>
-</head>
-<body>
-<header>
-  <h1>📦 <span>Archiv – Gelesene Immobilien</span></h1>
-  <div class="stats">
-    <div class="stat"><div class="stat-num" id="stat-count">0</div><div class="stat-label">Archiviert</div></div>
-  </div>
-  <div class="toolbar">
-    <button class="btn" onclick="markAllUnread()">🔄 Alle wiederherstellen</button>
-    <a href="index.html" class="nav-link">← Zurück zur Suche</a>
-  </div>
-</header>
-<div class="container">
 
-<div class="city-section">
+.broker-section{margin:52px 0 14px}
+.broker-title{
+  font-size:18px;font-weight:700;padding:10px 16px;border-radius:var(--radius-sm);
+  margin-bottom:20px;display:flex;align-items:center;gap:10px;letter-spacing:-0.3px;
+  background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.22)
+}
+.broker-title .dot{width:10px;height:10px;border-radius:50%;background:#a78bfa}
+.broker-title small{color:var(--muted);font-size:14px;font-weight:500}
+.broker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.broker-card{
+  background:var(--card);border:1px solid var(--border);border-left:3px solid #a78bfa;
+  border-radius:var(--radius);padding:14px 14px 12px;transition:all .25s;min-height:142px;
+  display:flex;flex-direction:column;justify-content:space-between
+}
+.broker-card:hover{transform:translateY(-2px);border-color:#4a3f6f;box-shadow:0 8px 30px rgba(0,0,0,.28)}
+.broker-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:8px}
+.broker-name{font-size:15px;font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.2px}
+.broker-seat{font-size:10px;padding:3px 8px;border-radius:999px;background:rgba(167,139,250,.14);color:#c4b5fd;white-space:nowrap;font-weight:700;text-transform:uppercase;letter-spacing:.35px}
+.broker-detail{font-size:12px;color:#c0c0d0;line-height:1.35;margin-bottom:7px}
+.broker-focus{font-size:11px;color:var(--muted);line-height:1.35;margin-bottom:12px}
+.broker-link{font-size:12px;color:#a78bfa;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.broker-link:hover{color:#c4b5fd}
+.broker-note{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.45;text-align:center}
+
+.badge-zvg{background:rgba(250,204,21,0.14);color:#facc15}.card-link.zvg{color:#facc15}.card-link.zvg:hover{color:#fde047}.no-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:34px;background:linear-gradient(135deg,#2a2a3a,#1a1a24);color:#facc15}
+
+.badge-zvg{background:rgba(250,204,21,0.14);color:#facc15}.card-link.zvg{color:#facc15}.card-link.zvg:hover{color:#fde047}.no-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:34px;background:linear-gradient(135deg,#2a2a3a,#1a1a24);color:#facc15}
+</style></head><body>
+<header><h1>📦 <span>Archiv</span></h1><div class="stats"><div class="stat" id="stat-total"><div class="stat-num">21</div><div class="stat-label">Objekte</div></div><div class="stat" id="stat-new"><div class="stat-num">21</div><div class="stat-label">Ungelesen</div></div><div class="stat" id="stat-archive"><div class="stat-num" style="color:var(--muted)">0</div><div class="stat-label">Archiv</div></div><div class="stat"><div class="stat-num">3</div><div class="stat-label">Städte</div></div><div class="stat"><div class="stat-num">21</div><div class="stat-label">Makler</div></div><div class="stat"><div class="stat-num">2</div><div class="stat-label">ZVG</div></div><div class="stat"><div class="stat-num">770K</div><div class="stat-label">Max Preis €</div></div></div><div class="toolbar"><button class="btn" onclick="markAll('read')">✅ Alle gelesen</button><button class="btn" onclick="markAll('unread')">🔄 Alle ungelesen</button><button class="btn active" id="btn-show-read" onclick="toggleShowRead()">👁️ Gelesene ausgeblendet</button><a href="index.html" class="nav-link">← Zurück zur Suche</a><a href="archive.html" class="nav-link">📦 Archiv <span class="archive-badge" id="archive-count">0</span></a></div></header>
+<div class="container"><div class="city-section">
 <div class="city-title c-karben"><span class="dot"></span>🌳 Karben · <span style="color:var(--muted);font-size:14px">12 Objekte</span></div>
 <div class="grid">
 
@@ -144,9 +155,8 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Reihenendhaus in idyllischer Lage inkl. Taunusblick</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="alter-info">🕐 vor einem Monat</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/166992150" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
@@ -161,9 +171,8 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="stadtteil-badge">Petterweil</span> <span class="alter-info">🕐 vor einem Monat</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/166930009" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
@@ -171,34 +180,32 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
       <div class="card karben" data-id="3380673586">
         <button class="read-btn" onclick="toggleRead('3380673586',this)" title="Gelesen">○</button>
         <div class="card-top">
-          <div class="card-img"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/90/90334867-e742-441b-8121-66f9f1614d20?rule=$_59.AUTO" alt="Kleinanzeigen Angebot" loading="lazy"></div>
+          <div class="card-img"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/90/90334867-e742-441b-8121-66f9f1614d20?rule=$_59.JPG" alt="Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">399.000 €</div>
-            <div class="card-details">📐 142.0 m² · 🛏️ 6 Zi.</div>
+            <div class="card-details">📐 142 m² · 🛏️ 6 Zi.</div>
             <div class="card-title">Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="stadtteil-badge">Petterweil</span></div>
-                <div class="card-bottom">
-          <span class="source-badge badge-ka">KA</span>
+        <div class="card-bottom">
+          <span class="source-badge badge-ka">Kleinanzeigen</span>
           <a href="https://www.kleinanzeigen.de/s-anzeige/karben-petterweil-familienfreundliches-reihenendhaus-mit-garten-und-viel-platz/3380673586-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
         </div>
       </div>
       <div class="card karben" data-id="3380688412">
         <button class="read-btn" onclick="toggleRead('3380688412',this)" title="Gelesen">○</button>
         <div class="card-top">
-          <div class="card-img"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/03/034138f5-0daa-4ddb-ae9a-1533dd15d105?rule=$_59.AUTO" alt="Kleinanzeigen Angebot" loading="lazy"></div>
+          <div class="card-img"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/03/034138f5-0daa-4ddb-ae9a-1533dd15d105?rule=$_59.JPG" alt="Haus Nieder Mockstadt" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">449.000 €</div>
-            <div class="card-details">📐 140.0 m² · 🛏️ 4 Zi.</div>
+            <div class="card-details">📐 140 m² · 🛏️ 4 Zi.</div>
             <div class="card-title">Haus Nieder Mockstadt</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="stadtteil-badge">Nieder Mockstadt</span></div>
-                <div class="card-bottom">
-          <span class="source-badge badge-ka">KA</span>
+        <div class="card-bottom">
+          <span class="source-badge badge-ka">Kleinanzeigen</span>
           <a href="https://www.kleinanzeigen.de/s-anzeige/haus-nieder-mockstadt/3380688412-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
         </div>
       </div>
@@ -212,11 +219,25 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Nur noch 1 charmantes RMH verfügbar, Ihr neues Zuhause wartet auf Sie in Karben OT Rendel</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="stadtteil-badge">Rendel</span> <span class="alter-info">🕐 vor einem Jahr</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/159627742" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
+        </div>
+      </div>
+      <div class="card karben" data-id="3228730368">
+        <button class="read-btn" onclick="toggleRead('3228730368',this)" title="Gelesen">○</button>
+        <div class="card-top">
+          <div class="card-img"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/64/646c8249-5b88-4027-bba7-584be9f82fed?rule=$_59.JPG" alt="* * * Lage Lage Lage * * *  Wenn Ihnen die Lage wichtig ist   * Ruhige Feldrand Lage *" loading="lazy"></div>
+          <div class="card-info">
+            <div class="card-price">559.800 €</div>
+            <div class="card-details">📐 144 m² · 🛏️ 6 Zi.</div>
+            <div class="card-title">* * * Lage Lage Lage * * *  Wenn Ihnen die Lage wichtig ist   * Ruhige Feldrand Lage *</div>
+          </div>
+        </div>
+        <div class="card-bottom">
+          <span class="source-badge badge-ka">Kleinanzeigen</span>
+          <a href="https://www.kleinanzeigen.de/s-anzeige/-lage-lage-lage-wenn-ihnen-die-lage-wichtig-ist-ruhige-feldrand-lage-/3228730368-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
         </div>
       </div>
       <div class="card karben" data-id="162463213">
@@ -229,57 +250,40 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Lage Lage Lage – ruhige Feldrandlage</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="alter-info">🕐 vor 6 Monaten</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/162463213" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
-        </div>
-      </div>
-      <div class="card karben" data-id="3228730368">
-        <button class="read-btn" onclick="toggleRead('3228730368',this)" title="Gelesen">○</button>
-        <div class="card-top">
-          <div class="card-img"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/64/646c8249-5b88-4027-bba7-584be9f82fed?rule=$_59.AUTO" alt="Kleinanzeigen Angebot" loading="lazy"></div>
-          <div class="card-info">
-            <div class="card-price">559.800 €</div>
-            <div class="card-details">📐 144.0 m² · 🛏️ 6 Zi.</div>
-            <div class="card-title">* * * Lage Lage Lage * * *  Wenn Ihnen die Lage wichtig ist   * Ruhige Feldrand Lage *</div>
-          </div>
-        </div>
-        <div class="card-bottom">
-          <span class="source-badge badge-ka">KA</span>
-          <a href="https://www.kleinanzeigen.de/s-anzeige/-lage-lage-lage-wenn-ihnen-die-lage-wichtig-ist-ruhige-feldrand-lage-/3228730368-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
         </div>
       </div>
       <div class="card karben" data-id="3387043884">
         <button class="read-btn" onclick="toggleRead('3387043884',this)" title="Gelesen">○</button>
         <div class="card-top">
-          <div class="card-img"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/15/156edb44-9408-43b6-85d6-88d8d4a2b222?rule=$_59.AUTO" alt="Kleinanzeigen Angebot" loading="lazy"></div>
+          <div class="card-img"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/15/156edb44-9408-43b6-85d6-88d8d4a2b222?rule=$_59.JPG" alt="Reihenmittelhaus in Karben – 144 m², 5 Zimmer | VHB 565.000 €" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">565.000 €</div>
-            <div class="card-details">📐 144.0 m² · 🛏️ 5 Zi.</div>
+            <div class="card-details">📐 144 m² · 🛏️ 5 Zi.</div>
             <div class="card-title">Reihenmittelhaus in Karben – 144 m², 5 Zimmer | VHB 565.000 €</div>
           </div>
         </div>
         <div class="card-bottom">
-          <span class="source-badge badge-ka">KA</span>
+          <span class="source-badge badge-ka">Kleinanzeigen</span>
           <a href="https://www.kleinanzeigen.de/s-anzeige/reihenmittelhaus-in-karben-144-m-5-zimmer-vhb-565-000-/3387043884-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
         </div>
       </div>
       <div class="card karben" data-id="3334314965">
         <button class="read-btn" onclick="toggleRead('3334314965',this)" title="Gelesen">○</button>
         <div class="card-top">
-          <div class="card-img"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/c0/c0222c20-0ed0-49d3-9800-93e18edf737c?rule=$_59.AUTO" alt="Kleinanzeigen Angebot" loading="lazy"></div>
+          <div class="card-img"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/c0/c0222c20-0ed0-49d3-9800-93e18edf737c?rule=$_59.JPG" alt="*Wohnen mit Freunden in Karben-Petterweil?* GROßE DOPPELHAUSHÄLFTE auf 250m² Grundstück" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">574.900 €</div>
-            <div class="card-details">📐 141.97 m² · 🛏️ 5 Zi.</div>
+            <div class="card-details">📐 141,97 m² · 🛏️ 5 Zi.</div>
             <div class="card-title">*Wohnen mit Freunden in Karben-Petterweil?* GROßE DOPPELHAUSHÄLFTE auf 250m² Grundstück</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="stadtteil-badge">Petterweil</span></div>
-                <div class="card-bottom">
-          <span class="source-badge badge-ka">KA</span>
+        <div class="card-bottom">
+          <span class="source-badge badge-ka">Kleinanzeigen</span>
           <a href="https://www.kleinanzeigen.de/s-anzeige/-wohnen-mit-freunden-in-karben-petterweil-grosse-doppelhaushaelfte-auf-250m-grundstueck/3334314965-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
         </div>
       </div>
@@ -293,9 +297,8 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Abrisshaus mit großem und schönem Grundstück in Top Lage</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="alter-info">🕐 vor 2 Jahren</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/154633802" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
@@ -303,7 +306,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
       <div class="card karben" data-id="is24-Karben-hierwerdenwohntru">
         <button class="read-btn" onclick="toggleRead('is24-Karben-hierwerdenwohntru',this)" title="Gelesen">○</button>
         <div class="card-top">
-          <div class="card-img"><div class="no-img">🌳</div></div>
+          <div class="card-img"><div class="no-img">⚖️</div></div>
           <div class="card-info">
             <div class="card-price">639.000 €</div>
             <div class="card-details">📐 158 m² · 🛏️ 5 Zi.</div>
@@ -318,27 +321,40 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
       <div class="card karben" data-id="167361279">
         <button class="read-btn" onclick="toggleRead('167361279',this)" title="Gelesen">○</button>
         <div class="card-top">
-          <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/2a3a513e-b1f4-489f-8087-64d30df5280e-2021095757.jpg" alt="Kernsaniertes 1–2-Familienhaus mit PV, Speicher & Brunnen" loading="lazy"></div>
+          <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/2a3a513e-b1f4-489f-8087-64d30df5280e-2021095757.jpg" alt="Kernsaniertes 1–2-Familienhaus mit PV, Speicher &amp; Brunnen" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">729.900 €</div>
             <div class="card-details">📐 169 m² · 🛏️ 8 Zi.</div>
-            <div class="card-title">Kernsaniertes 1–2-Familienhaus mit PV, Speicher & Brunnen</div>
+            <div class="card-title">Kernsaniertes 1–2-Familienhaus mit PV, Speicher &amp; Brunnen</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="alter-info">🕐 vor 11 Tagen</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/167361279" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
-    </div>
-  </div>
-
-<div class="city-section">
-<div class="city-title c-vilbel"><span class="dot"></span>🏛️ Bad Vilbel · <span style="color:var(--muted);font-size:14px">2 Objekte</span></div>
+</div>
+</div><div class="city-section">
+<div class="city-title c-vilbel"><span class="dot"></span>💧 Bad Vilbel · <span style="color:var(--muted);font-size:14px">4 Objekte</span></div>
 <div class="grid">
 
+      <div class="card vilbel" data-id="zvg-2219786">
+        <button class="read-btn" onclick="toggleRead('zvg-2219786',this)" title="Gelesen">○</button>
+        <div class="card-top">
+          <div class="card-img"><div class="no-img">⚖️</div></div>
+          <div class="card-info">
+            <div class="card-price">573.000 €</div>
+            <div class="card-details">📐 181 m² · 🛏️ 6 Zi.</div>
+            <div class="card-title">Freistehendes 1- bis 2-Familienhaus mit Garten und mind. 4 Stellplätzen</div>
+          </div>
+        </div>
+          <div class="card-extras"><span class="alter-info">⚖️ Termin 23.06.2026 10:00</span> <span class="stadtteil-badge">61118 Bad Vilbel, Bad Vilbeler Straße</span></div>
+        <div class="card-bottom">
+          <span class="source-badge badge-zvg">ZVG</span>
+          <a href="https://www.zwangsversteigerungen-brd.de/ObjektDetails/2219786" target="_blank" rel="noopener" class="card-link zvg">Zum Angebot →</a>
+        </div>
+      </div>
       <div class="card vilbel" data-id="167440501">
         <button class="read-btn" onclick="toggleRead('167440501',this)" title="Gelesen">○</button>
         <div class="card-top">
@@ -349,9 +365,8 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Bad Vilbel: Gepflegtes Stadthaus mit viel Platz!</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="alter-info">🕐 vor 7 Tagen</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/167440501" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
@@ -366,18 +381,31 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Reihenmittelhaus mit Garten, Balkon und Keller in Toplage</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="alter-info">🕐 vor einem Monat</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/166986360" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
-    </div>
-  </div>
-
-<div class="city-section">
-<div class="city-title c-hofheim"><span class="dot"></span>🌄 Hofheim · <span style="color:var(--muted);font-size:14px">5 Objekte</span></div>
+      <div class="card vilbel" data-id="zvg-2219994">
+        <button class="read-btn" onclick="toggleRead('zvg-2219994',this)" title="Gelesen">○</button>
+        <div class="card-top">
+          <div class="card-img"><div class="no-img">⚖️</div></div>
+          <div class="card-info">
+            <div class="card-price">760.000 €</div>
+            <div class="card-details">📐 217,4 m² · 🛏️ 0 Zi.</div>
+            <div class="card-title">Freistehendes 2-Familienhaus nebst Garten und Garage</div>
+          </div>
+        </div>
+          <div class="card-extras"><span class="alter-info">⚖️ Termin 30.06.2026 10:00</span> <span class="stadtteil-badge">61118 Bad Vilbel, Ringstraße</span></div>
+        <div class="card-bottom">
+          <span class="source-badge badge-zvg">ZVG</span>
+          <a href="https://www.zwangsversteigerungen-brd.de/ObjektDetails/2219994" target="_blank" rel="noopener" class="card-link zvg">Zum Angebot →</a>
+        </div>
+      </div>
+</div>
+</div><div class="city-section">
+<div class="city-title c-hofheim"><span class="dot"></span>🏰 Hofheim am Taunus · <span style="color:var(--muted);font-size:14px">5 Objekte</span></div>
 <div class="grid">
 
       <div class="card hofheim" data-id="166955601">
@@ -390,9 +418,8 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Ruhige Top-Lage! Gemütliches EFH mit Einliegerwohnung in Lorsbach</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="stadtteil-badge">Lorsbach</span> <span class="alter-info">🕐 vor einem Monat</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/166955601" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
@@ -415,7 +442,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
       <div class="card hofheim" data-id="is24-Hofheim-hofheimlorsbachau">
         <button class="read-btn" onclick="toggleRead('is24-Hofheim-hofheimlorsbachau',this)" title="Gelesen">○</button>
         <div class="card-top">
-          <div class="card-img"><div class="no-img">🌄</div></div>
+          <div class="card-img"><div class="no-img">⚖️</div></div>
           <div class="card-info">
             <div class="card-price">599.000 €</div>
             <div class="card-details">📐 142 m² · 🛏️ 4.5 Zi.</div>
@@ -430,16 +457,15 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
       <div class="card hofheim" data-id="165971693">
         <button class="read-btn" onclick="toggleRead('165971693',this)" title="Gelesen">○</button>
         <div class="card-top">
-          <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/1b137cfd-b91f-491d-b39d-4222f224d826-1996591097.jpg" alt="Wohnen am Feldrand in Hofheim – modernes Zuhause mit Südterrasse & Balkon" loading="lazy"></div>
+          <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/1b137cfd-b91f-491d-b39d-4222f224d826-1996591097.jpg" alt="Wohnen am Feldrand in Hofheim – modernes Zuhause mit Südterrasse &amp; Balkon" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">679.000 €</div>
             <div class="card-details">📐 158 m² · 🛏️ 5 Zi.</div>
-            <div class="card-title">Wohnen am Feldrand in Hofheim – modernes Zuhause mit Südterrasse & Balkon</div>
+            <div class="card-title">Wohnen am Feldrand in Hofheim – modernes Zuhause mit Südterrasse &amp; Balkon</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="alter-info">🕐 vor 2 Monaten</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/165971693" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
@@ -454,58 +480,249 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Großzügiges Einfamilienhaus mit wunderschönem Garten</div>
           </div>
         </div>
-
           <div class="card-extras"><span class="alter-info">🕐 vor 2 Jahren</span></div>
-                <div class="card-bottom">
+        <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/151591929" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
-    </div>
-  </div>
-
 </div>
-<footer class="footer">
-  Stand 10.05.2026 · <a href="index.html" style="color:var(--accent)">← Zurück zur Immobiliensuche</a>
-</footer>
-<script>
-const LS_KEY='immo_read_ids';
-let readIds=new Set();
-async function init(){
-  try{const r=await fetch('read.json?t='+Date.now());const d=await r.json();if(d.read)d.read.forEach(id=>readIds.add(id))}catch(e){}
-  try{JSON.parse(localStorage.getItem(LS_KEY)||'[]').forEach(id=>readIds.add(id))}catch(e){}
-  applyFilters();
-}
-function applyFilters(){
-  const cards=document.querySelectorAll('.card');
-  let count=0;
-  cards.forEach(c=>{
-    if(readIds.has(c.dataset.id)){
-      c.style.display='';
-      c.classList.add('read');
-      count++;
-    }else{
-      c.style.display='none';
-    }
-  });
-  document.getElementById('stat-count').textContent=count;
-  if(count===0){
-    let msg=document.getElementById('empty-msg');
-    if(!msg){
-      msg=document.createElement('div');
-      msg.id='empty-msg';
-      msg.className='empty-msg';
-      msg.innerHTML='Keine archivierten Eintr\u00e4ge.<br><a href=\"index.html\" style=\"color:var(--accent)\">\u2190 Zur\u00fcck zur Suche</a>';
-      document.querySelector('.container').appendChild(msg);
-    }
-  }
-}
-function markAllUnread(){
-  document.querySelectorAll('.card').forEach(c=>readIds.delete(c.dataset.id));
-  localStorage.setItem(LS_KEY,JSON.stringify([...readIds]));
-  applyFilters();
-}
-init();
-</script>
-</body>
-</html>
+</div><section class="broker-section" id="makler">
+  <div class="broker-title"><span class="dot"></span>🏢 Makler im Suchgebiet · <small>21 Kontakte</small></div>
+  <div class="broker-grid">
+    <a class="broker-card" href="https://www.fvb-immo.de" target="_blank" rel="noopener" data-broker="FVB Immo" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">FVB Immo</div>
+          <div class="broker-seat">Obertshausen</div>
+        </div>
+        <div class="broker-detail">Filialen Karben · Bad Vilbel · Hofheim</div>
+        <div class="broker-focus">Top-Kontakt / Volksbank Rhein-Main</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.missalla-immobilien.de" target="_blank" rel="noopener" data-broker="Missalla Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Missalla Immobilien</div>
+          <div class="broker-seat">Karben</div>
+        </div>
+        <div class="broker-detail">Rendeler Str. 5c · 61184 Karben</div>
+        <div class="broker-focus">Karben · Bad Vilbel · Wetterau</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://vonschluetterimmobilien.de" target="_blank" rel="noopener" data-broker="von Schlütter Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">von Schlütter Immobilien</div>
+          <div class="broker-seat">Bad Vilbel</div>
+        </div>
+        <div class="broker-detail">Niddaplatz 1 · 61118 Bad Vilbel</div>
+        <div class="broker-focus">Bad Vilbel · Karben · Vermietung/Kauf</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://andrea-ditzel-immobilien.de" target="_blank" rel="noopener" data-broker="Andrea Ditzel Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Andrea Ditzel Immobilien</div>
+          <div class="broker-seat">Bad Vilbel</div>
+        </div>
+        <div class="broker-detail">Frankfurter Straße 135 · 61118 Bad Vilbel</div>
+        <div class="broker-focus">Bad Vilbel · Heilsberg · Dortelweil</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://hwhimmo.de" target="_blank" rel="noopener" data-broker="HWH Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">HWH Immobilien</div>
+          <div class="broker-seat">Bad Vilbel</div>
+        </div>
+        <div class="broker-detail">Friedberger Straße 102 · 61118 Bad Vilbel</div>
+        <div class="broker-focus">Bad Vilbel · Karben</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://diehl-immobilien-bv.de" target="_blank" rel="noopener" data-broker="Diehl Immobilien BV" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Diehl Immobilien BV</div>
+          <div class="broker-seat">Bad Vilbel</div>
+        </div>
+        <div class="broker-detail">Schützenstraße 9 · 61118 Bad Vilbel</div>
+        <div class="broker-focus">Bad Vilbel · Karben · Rendel</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://ac-immocenter.de" target="_blank" rel="noopener" data-broker="AC Immocenter" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">AC Immocenter</div>
+          <div class="broker-seat">Bad Vilbel</div>
+        </div>
+        <div class="broker-detail">Bachwiesenstraße 1 · 61118 Bad Vilbel</div>
+        <div class="broker-focus">Bad Vilbel</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.dornbusch-immobilien.de" target="_blank" rel="noopener" data-broker="Dornbusch Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Dornbusch Immobilien</div>
+          <div class="broker-seat">Frankfurt am Main</div>
+        </div>
+        <div class="broker-detail">Am Dornbusch 1 · 60320 Frankfurt</div>
+        <div class="broker-focus">Frankfurt · Bad Vilbel-Umland</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://citaimmobilien.de" target="_blank" rel="noopener" data-broker="Cita Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Cita Immobilien</div>
+          <div class="broker-seat">Frankfurt am Main</div>
+        </div>
+        <div class="broker-detail">Berner Straße 53 · 60437 Frankfurt</div>
+        <div class="broker-focus">Frankfurt-Nord · Rhein-Main</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.immobilien-hornung.de" target="_blank" rel="noopener" data-broker="Immobilien Hornung" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Immobilien Hornung</div>
+          <div class="broker-seat">Hanau</div>
+        </div>
+        <div class="broker-detail">Wilhelm-Fischer-Straße 18 · 63454 Hanau</div>
+        <div class="broker-focus">Rhein-Main · Karben/BV im Suchgebiet</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.roesnerundpartner.de" target="_blank" rel="noopener" data-broker="Rösner &amp; Partner" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Rösner &amp; Partner</div>
+          <div class="broker-seat">Hofheim am Taunus</div>
+        </div>
+        <div class="broker-detail">Schoppastraße 4 · 65719 Hofheim</div>
+        <div class="broker-focus">Hofheim · Main-Taunus</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.orban-partner.de" target="_blank" rel="noopener" data-broker="Orban &amp; Partner" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Orban &amp; Partner</div>
+          <div class="broker-seat">Hofheim am Taunus</div>
+        </div>
+        <div class="broker-detail">Im Langgewann 14b · 65719 Hofheim</div>
+        <div class="broker-focus">Hofheim · Main-Taunus</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://hci-immobilien.de" target="_blank" rel="noopener" data-broker="HCI Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">HCI Immobilien</div>
+          <div class="broker-seat">Hofheim am Taunus</div>
+        </div>
+        <div class="broker-detail">Hauptstraße 47 · 65719 Hofheim</div>
+        <div class="broker-focus">Hofheim</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.skyline-immobilien.com" target="_blank" rel="noopener" data-broker="Skyline Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Skyline Immobilien</div>
+          <div class="broker-seat">Hofheim am Taunus</div>
+        </div>
+        <div class="broker-detail">Lorsbacher Straße 1a · 65719 Hofheim</div>
+        <div class="broker-focus">Hofheim · Lorsbach · Main-Taunus</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="http://www.ralf-weber-immobilien.de" target="_blank" rel="noopener" data-broker="Ralf Weber Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Ralf Weber Immobilien</div>
+          <div class="broker-seat">Hofheim am Taunus</div>
+        </div>
+        <div class="broker-detail">Hofheim · Website verweist auf Jimdo-Seite</div>
+        <div class="broker-focus">Hofheim</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://hochtaunus-immo.de" target="_blank" rel="noopener" data-broker="Hochtaunus Immo" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Hochtaunus Immo</div>
+          <div class="broker-seat">Schmitten</div>
+        </div>
+        <div class="broker-detail">61389 Schmitten</div>
+        <div class="broker-focus">Hochtaunus · Rhein-Main</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.vivat-immobilien.de" target="_blank" rel="noopener" data-broker="VIVAT Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">VIVAT Immobilien</div>
+          <div class="broker-seat">Bad Homburg</div>
+        </div>
+        <div class="broker-detail">Louisenstraße 133 · 61348 Bad Homburg</div>
+        <div class="broker-focus">Taunus · Wetterau</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.reile-immobilien.de" target="_blank" rel="noopener" data-broker="Reile Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Reile Immobilien</div>
+          <div class="broker-seat">Bad Nauheim</div>
+        </div>
+        <div class="broker-detail">Lessingstraße 5 · 61231 Bad Nauheim</div>
+        <div class="broker-focus">Bad Nauheim · Friedberg · Wetterau</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.dreher-immobilien.de" target="_blank" rel="noopener" data-broker="Dreher Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Dreher Immobilien</div>
+          <div class="broker-seat">Bad Nauheim</div>
+        </div>
+        <div class="broker-detail">Franz-Groedel-Straße 6 · 61231 Bad Nauheim</div>
+        <div class="broker-focus">Bad Nauheim · Wetterau</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.kirano-immobilien.de" target="_blank" rel="noopener" data-broker="KIRANO Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">KIRANO Immobilien</div>
+          <div class="broker-seat">Bad Nauheim</div>
+        </div>
+        <div class="broker-detail">Franz-Groedel-Straße 7 · 61231 Bad Nauheim</div>
+        <div class="broker-focus">Bad Nauheim</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.sur-immobilien.de" target="_blank" rel="noopener" data-broker="SUR Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">SUR Immobilien</div>
+          <div class="broker-seat">Friedberg</div>
+        </div>
+        <div class="broker-detail">Kaiserstraße 126 · 61169 Friedberg</div>
+        <div class="broker-focus">Friedberg · Wetterau</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+  </div>
+  <div class="broker-note">Hinweis: Webscan am 11.05.2026: keine sicheren neuen Treffer nach Kriterien gefunden. Die Liste dient als regionale Makler-Übersicht und Kontaktbasis für Off-Market-Angebote.</div>
+</section></div>
+<footer class="footer">Stand 11.05.2026 · Kriterien: max 770.000 € · kein Neubau/Fertighaus-Spam · ZVG: Häuser/Grundstücke regional gefiltert · <a href="archive.html" style="color:var(--accent)">📦 Archiv</a></footer>
+<script>const LS_KEY='immo_read_ids';let readIds=new Set(),hideRead=false;async function initReadState(){try{const r=await fetch('read.json?t='+Date.now());const d=await r.json();if(d.read)d.read.forEach(id=>readIds.add(id))}catch(e){}try{JSON.parse(localStorage.getItem(LS_KEY)||'[]').forEach(id=>readIds.add(id))}catch(e){}applyReadState();updateStats();}function applyReadState(){document.querySelectorAll('.card').forEach(c=>{const id=c.dataset.id,btn=c.querySelector('.read-btn');if(readIds.has(id)){c.classList.add('read');btn.classList.add('checked');btn.textContent='✓'}else{c.classList.remove('read');btn.classList.remove('checked');btn.textContent='○'}c.style.display=readIds.has(id)?'':'none';});}function toggleRead(id,btn){readIds.has(id)?readIds.delete(id):readIds.add(id);localStorage.setItem(LS_KEY,JSON.stringify([...readIds]));applyReadState();updateStats();}function markAll(a){document.querySelectorAll('.card').forEach(c=>a==='read'?readIds.add(c.dataset.id):readIds.delete(c.dataset.id));localStorage.setItem(LS_KEY,JSON.stringify([...readIds]));applyReadState();updateStats();}function toggleShowRead(){hideRead=!hideRead;const b=document.getElementById('btn-show-read');hideRead?(b.classList.add('active'),b.innerHTML='👁️ Gelesene ausgeblendet'):(b.classList.remove('active'),b.innerHTML='👁️ Gelesene ausblenden');applyReadState();}function updateStats(){const t=document.querySelectorAll('.card').length,u=t-readIds.size;document.getElementById('stat-new').querySelector('.stat-num').textContent=u;const aEl=document.getElementById('archive-count');if(aEl)aEl.textContent=readIds.size;const statA=document.getElementById('stat-archive');if(statA)statA.querySelector('.stat-num').textContent=readIds.size;}initReadState();</script></body></html>
