@@ -36,7 +36,6 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 }
 .btn:hover{border-color:#4a4a5a;background:#252530}
 .btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.btn .count{font-size:10px;opacity:.7}
 .container{max-width:1200px;margin:0 auto;padding:32px 20px}
 .city-section{margin-bottom:48px}
 .city-title{
@@ -71,7 +70,6 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 .card-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
 .card-price{font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.3px}
 .card-details{font-size:12px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
-.card-details span{display:flex;align-items:center;gap:4px}
 .card-title{font-size:12.5px;color:#c0c0d0;line-height:1.4;margin-top:2px;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .card-bottom{
@@ -90,6 +88,8 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
   display:flex;align-items:center;gap:4px;transition:color .15s;
 }
 .card-link:hover{color:#8ba4ff}
+.card-link.ka{color:var(--accent2)}
+.card-link.ka:hover{color:#ff8a9e}
 .read-btn{
   position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;
   border:2px solid var(--border);background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);
@@ -98,18 +98,9 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 }
 .read-btn:hover{border-color:var(--accent);color:var(--accent);transform:scale(1.1)}
 .read-btn.checked{background:rgba(108,138,255,0.25);border-color:var(--accent);color:var(--accent)}
-.card.read .read-btn.checked{background:rgba(108,138,255,0.4)}
 .footer{
   text-align:center;padding:32px 20px;color:var(--muted);font-size:12px;
   border-top:1px solid var(--border);margin-top:32px;
-}
-.footer a{color:var(--accent);text-decoration:none}
-.footer a:hover{text-decoration:underline}
-@media(max-width:768px){
-  .grid{grid-template-columns:1fr}
-  header h1{font-size:22px}
-  .card-img{width:110px;height:85px}
-  .read-btn{top:6px;right:6px;width:28px;height:28px;font-size:12px}
 }
 .card.karben{border-left:3px solid var(--karben)}
 .card.vilbel{border-left:3px solid var(--vilbel)}
@@ -117,7 +108,6 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 </style>
 </head>
 <body>
-
 <header>
   <h1>🏠 <span>Immobiliensuche</span></h1>
   <div class="stats">
@@ -127,480 +117,360 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
     <div class="stat"><div class="stat-num">770K</div><div class="stat-label">Max Preis €</div></div>
   </div>
   <div class="toolbar">
-    <button class="btn" onclick="markAll('read')" title="Alle als gelesen markieren">✅ Alle gelesen</button>
-    <button class="btn" onclick="markAll('unread')" title="Alle als ungelesen markieren">🔄 Alle ungelesen</button>
-    <button class="btn" id="btn-show-read" onclick="toggleShowRead()" title="Gelesene ein-/ausblenden">👁️ Gelesene <span class="count">ausblenden</span></button>
+    <button class="btn" onclick="markAll('read')">✅ Alle gelesen</button>
+    <button class="btn" onclick="markAll('unread')">🔄 Alle ungelesen</button>
+    <button class="btn" id="btn-show-read" onclick="toggleShowRead()">👁️ Gelesene ausblenden</button>
   </div>
 </header>
-
 <div class="container">
-  <div class="city-section">
-    <div class="city-title c-karben"><span class="dot"></span>🌳 Karben · <span style="color:var(--muted);font-size:14px">10 Objekte</span></div>
-    <div class="grid">
+
+<div class="city-section">
+<div class="city-title c-karben"><span class="dot"></span>🌳 Karben · <span style="color:var(--muted);font-size:14px">12 Objekte</span></div>
+<div class="grid">
+
       <div class="card karben" data-id="166992150">
-        <button class="read-btn" onclick="toggleRead('166992150',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('166992150',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/2a80515a-daea-4725-9d86-2285c7c52f62-2014511272.jpg" alt="Reihenendhaus in idyllischer Lage inkl. Taunusblick" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">395.000 €</div>
-            <div class="card-details">
-              <span>📐 138 m²</span>
-              <span>🛏️ 5 Zi.</span>
-            </div>
+            <div class="card-details">📐 138 m² · 🛏️ 5 Zi.</div>
             <div class="card-title">Reihenendhaus in idyllischer Lage inkl. Taunusblick</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/166992150" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/166992150" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
       <div class="card karben" data-id="166930009">
-        <button class="read-btn" onclick="toggleRead('166930009',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('166930009',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/58b87e07-56d0-4897-8498-206fe70aa626-2013437263.jpg" alt="Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">399.000 €</div>
-            <div class="card-details">
-              <span>📐 142 m²</span>
-              <span>🛏️ 6 Zi.</span>
-            </div>
+            <div class="card-details">📐 142 m² · 🛏️ 6 Zi.</div>
             <div class="card-title">Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/166930009" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/166930009" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
-      <div class="card karben" data-id="ka-Karben-hausniedermockstad">
-        <button class="read-btn" onclick="toggleRead('ka-Karben-hausniedermockstad',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+      <div class="card karben" data-id="3380673586">
+        <button class="read-btn" onclick="toggleRead('3380673586',this)" title="Gelesen">○</button>
+        <div class="card-top">
+          <div class="card-img"><div class="no-img">🌳</div></div>
+          <div class="card-info">
+            <div class="card-price">399.000 €</div>
+            <div class="card-details">📐 142.0 m² · 🛏️ 6 Zi.</div>
+            <div class="card-title">Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz</div>
+          </div>
+        </div>
+        <div class="card-bottom">
+          <span class="source-badge badge-ka">KA</span>
+          <a href="https://www.kleinanzeigen.de/s-anzeige/karben-petterweil-familienfreundliches-reihenendhaus-mit-garten-und-viel-platz/3380673586-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
+        </div>
+      </div>
+      <div class="card karben" data-id="3380688412">
+        <button class="read-btn" onclick="toggleRead('3380688412',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><div class="no-img">🌳</div></div>
           <div class="card-info">
             <div class="card-price">449.000 €</div>
-            <div class="card-details">
-              <span>📐 140 m²</span>
-              <span>🛏️ 4 Zi.</span>
-            </div>
+            <div class="card-details">📐 140.0 m² · 🛏️ 4 Zi.</div>
             <div class="card-title">Haus Nieder Mockstadt</div>
           </div>
         </div>
         <div class="card-bottom">
-          <span class="source-badge badge-ka">Kleinanzeigen</span>
-          <a href="https://www.kleinanzeigen.de/s-haus-kaufen/karben/" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <span class="source-badge badge-ka">KA</span>
+          <a href="https://www.kleinanzeigen.de/s-anzeige/haus-nieder-mockstadt/3380688412-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
         </div>
       </div>
       <div class="card karben" data-id="159627742">
-        <button class="read-btn" onclick="toggleRead('159627742',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('159627742',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/4b3dc4fc-69e4-4072-a85d-8bd16c6b65d4-1910476818.jpg" alt="Nur noch 1 charmantes RMH verfügbar, Ihr neues Zuhause wartet auf Sie in Karben OT Rendel" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">485.000 €</div>
-            <div class="card-details">
-              <span>📐 155 m²</span>
-              <span>🛏️ 6 Zi.</span>
-            </div>
+            <div class="card-details">📐 155 m² · 🛏️ 6 Zi.</div>
             <div class="card-title">Nur noch 1 charmantes RMH verfügbar, Ihr neues Zuhause wartet auf Sie in Karben OT Rendel</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/159627742" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/159627742" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
       <div class="card karben" data-id="162463213">
-        <button class="read-btn" onclick="toggleRead('162463213',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('162463213',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/f3f5aaa3-4dc0-4500-a845-95bc4474ca7f-2005161638.jpg" alt="Lage Lage Lage – ruhige Feldrandlage" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">559.800 €</div>
-            <div class="card-details">
-              <span>📐 144 m²</span>
-              <span>🛏️ 6 Zi.</span>
-            </div>
+            <div class="card-details">📐 144 m² · 🛏️ 6 Zi.</div>
             <div class="card-title">Lage Lage Lage – ruhige Feldrandlage</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/162463213" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/162463213" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
-      <div class="card karben" data-id="ka-Karben-lagelagelageruh">
-        <button class="read-btn" onclick="toggleRead('ka-Karben-lagelagelageruh',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+      <div class="card karben" data-id="3228730368">
+        <button class="read-btn" onclick="toggleRead('3228730368',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><div class="no-img">🌳</div></div>
           <div class="card-info">
             <div class="card-price">559.800 €</div>
-            <div class="card-details">
-              <span>📐 144 m²</span>
-              <span>🛏️ 6 Zi.</span>
-            </div>
-            <div class="card-title">Lage Lage Lage – ruhige Feldrandlage</div>
+            <div class="card-details">📐 144.0 m² · 🛏️ 6 Zi.</div>
+            <div class="card-title">* * * Lage Lage Lage * * *  Wenn Ihnen die Lage wichtig ist   * Ruhige Feldrand Lage *</div>
           </div>
         </div>
         <div class="card-bottom">
-          <span class="source-badge badge-ka">Kleinanzeigen</span>
-          <a href="https://www.kleinanzeigen.de/s-haus-kaufen/karben/" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <span class="source-badge badge-ka">KA</span>
+          <a href="https://www.kleinanzeigen.de/s-anzeige/-lage-lage-lage-wenn-ihnen-die-lage-wichtig-ist-ruhige-feldrand-lage-/3228730368-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
         </div>
       </div>
-      <div class="card karben" data-id="ka-Karben-reihenmittelhausin">
-        <button class="read-btn" onclick="toggleRead('ka-Karben-reihenmittelhausin',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+      <div class="card karben" data-id="3387043884">
+        <button class="read-btn" onclick="toggleRead('3387043884',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><div class="no-img">🌳</div></div>
           <div class="card-info">
             <div class="card-price">565.000 €</div>
-            <div class="card-details">
-              <span>📐 144 m²</span>
-              <span>🛏️ 5 Zi.</span>
-            </div>
-            <div class="card-title">Reihenmittelhaus in Karben – 144 m², 5 Zimmer</div>
+            <div class="card-details">📐 144.0 m² · 🛏️ 5 Zi.</div>
+            <div class="card-title">Reihenmittelhaus in Karben – 144 m², 5 Zimmer | VHB 565.000 €</div>
           </div>
         </div>
         <div class="card-bottom">
-          <span class="source-badge badge-ka">Kleinanzeigen</span>
-          <a href="https://www.kleinanzeigen.de/s-haus-kaufen/karben/" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <span class="source-badge badge-ka">KA</span>
+          <a href="https://www.kleinanzeigen.de/s-anzeige/reihenmittelhaus-in-karben-144-m-5-zimmer-vhb-565-000-/3387043884-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
+        </div>
+      </div>
+      <div class="card karben" data-id="3334314965">
+        <button class="read-btn" onclick="toggleRead('3334314965',this)" title="Gelesen">○</button>
+        <div class="card-top">
+          <div class="card-img"><div class="no-img">🌳</div></div>
+          <div class="card-info">
+            <div class="card-price">574.900 €</div>
+            <div class="card-details">📐 141.97 m² · 🛏️ 5 Zi.</div>
+            <div class="card-title">*Wohnen mit Freunden in Karben-Petterweil?* GROßE DOPPELHAUSHÄLFTE auf 250m² Grundstück</div>
+          </div>
+        </div>
+        <div class="card-bottom">
+          <span class="source-badge badge-ka">KA</span>
+          <a href="https://www.kleinanzeigen.de/s-anzeige/-wohnen-mit-freunden-in-karben-petterweil-grosse-doppelhaushaelfte-auf-250m-grundstueck/3334314965-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
         </div>
       </div>
       <div class="card karben" data-id="154633802">
-        <button class="read-btn" onclick="toggleRead('154633802',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('154633802',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/3e125b55-c60d-49af-870d-e1192aadefe4-1852661737.jpeg" alt="Abrisshaus mit großem und schönem Grundstück in Top Lage" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">625.000 €</div>
-            <div class="card-details">
-              <span>📐 152 m²</span>
-              <span>🛏️ 11 Zi.</span>
-            </div>
+            <div class="card-details">📐 152 m² · 🛏️ 11 Zi.</div>
             <div class="card-title">Abrisshaus mit großem und schönem Grundstück in Top Lage</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/154633802" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/154633802" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
       <div class="card karben" data-id="is24-Karben-hierwerdenwohntru">
-        <button class="read-btn" onclick="toggleRead('is24-Karben-hierwerdenwohntru',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('is24-Karben-hierwerdenwohntru',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><div class="no-img">🌳</div></div>
           <div class="card-info">
             <div class="card-price">639.000 €</div>
-            <div class="card-details">
-              <span>📐 158 m²</span>
-              <span>🛏️ 5 Zi.</span>
-            </div>
+            <div class="card-details">📐 158 m² · 🛏️ 5 Zi.</div>
             <div class="card-title">Hier werden Wohnträume wahr: Stilvolle Doppelhaushälfte mit Sauna</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/Suche/de/hessen/wetteraukreis/karben/haus-kaufen" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/Suche/de/hessen/wetteraukreis/karben/haus-kaufen" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
       <div class="card karben" data-id="167361279">
-        <button class="read-btn" onclick="toggleRead('167361279',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('167361279',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/2a3a513e-b1f4-489f-8087-64d30df5280e-2021095757.jpg" alt="Kernsaniertes 1–2-Familienhaus mit PV, Speicher & Brunnen" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">729.900 €</div>
-            <div class="card-details">
-              <span>📐 169 m²</span>
-              <span>🛏️ 8 Zi.</span>
-            </div>
+            <div class="card-details">📐 169 m² · 🛏️ 8 Zi.</div>
             <div class="card-title">Kernsaniertes 1–2-Familienhaus mit PV, Speicher & Brunnen</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/167361279" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/167361279" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="city-section">
-    <div class="city-title c-vilbel"><span class="dot"></span>🏛️ Bad Vilbel · <span style="color:var(--muted);font-size:14px">3 Objekte</span></div>
-    <div class="grid">
+
+<div class="city-section">
+<div class="city-title c-vilbel"><span class="dot"></span>🏛️ Bad Vilbel · <span style="color:var(--muted);font-size:14px">2 Objekte</span></div>
+<div class="grid">
+
       <div class="card vilbel" data-id="167440501">
-        <button class="read-btn" onclick="toggleRead('167440501',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('167440501',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/0ea7d5a0-9264-4228-b80e-6029df9178c5-2022376492.png" alt="Bad Vilbel: Gepflegtes Stadthaus mit viel Platz!" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">590.000 €</div>
-            <div class="card-details">
-              <span>📐 140 m²</span>
-              <span>🛏️ 4 Zi.</span>
-            </div>
+            <div class="card-details">📐 140 m² · 🛏️ 4 Zi.</div>
             <div class="card-title">Bad Vilbel: Gepflegtes Stadthaus mit viel Platz!</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/167440501" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
-        </div>
-      </div>
-      <div class="card vilbel" data-id="ka-Bad Vilbel-architekturmitweit">
-        <button class="read-btn" onclick="toggleRead('ka-Bad Vilbel-architekturmitweit',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
-        <div class="card-top">
-          <div class="card-img"><div class="no-img">🏛️</div></div>
-          <div class="card-info">
-            <div class="card-price">616.000 €</div>
-            <div class="card-details">
-              <span>📐 148 m²</span>
-              <span>🛏️ 4 Zi.</span>
-            </div>
-            <div class="card-title">ARCHITEKTUR MIT WEITBLICK UND SCHÖNEM GRUNDSTÜCK</div>
-          </div>
-        </div>
-        <div class="card-bottom">
-          <span class="source-badge badge-ka">Kleinanzeigen</span>
-          <a href="https://www.kleinanzeigen.de/s-haus-kaufen/bad-vilbel/" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/167440501" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
       <div class="card vilbel" data-id="166986360">
-        <button class="read-btn" onclick="toggleRead('166986360',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('166986360',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/0f82c48c-ada4-46fc-b6c5-8806b2b436bb-2014378820.png" alt="Reihenmittelhaus mit Garten, Balkon und Keller in Toplage" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">649.000 €</div>
-            <div class="card-details">
-              <span>📐 150 m²</span>
-              <span>🛏️ 6 Zi.</span>
-            </div>
+            <div class="card-details">📐 150 m² · 🛏️ 6 Zi.</div>
             <div class="card-title">Reihenmittelhaus mit Garten, Balkon und Keller in Toplage</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/166986360" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/166986360" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="city-section">
-    <div class="city-title c-hofheim"><span class="dot"></span>🌄 Hofheim · <span style="color:var(--muted);font-size:14px">6 Objekte</span></div>
-    <div class="grid">
+
+<div class="city-section">
+<div class="city-title c-hofheim"><span class="dot"></span>🌄 Hofheim · <span style="color:var(--muted);font-size:14px">5 Objekte</span></div>
+<div class="grid">
+
       <div class="card hofheim" data-id="166955601">
-        <button class="read-btn" onclick="toggleRead('166955601',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('166955601',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/27af6eaf-5cb1-47a2-a31c-bf560e438725-2013912471.jpg" alt="Ruhige Top-Lage! Gemütliches EFH mit Einliegerwohnung in Lorsbach" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">490.000 €</div>
-            <div class="card-details">
-              <span>📐 161 m²</span>
-              <span>🛏️ 6 Zi.</span>
-            </div>
+            <div class="card-details">📐 161 m² · 🛏️ 6 Zi.</div>
             <div class="card-title">Ruhige Top-Lage! Gemütliches EFH mit Einliegerwohnung in Lorsbach</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/166955601" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
-        </div>
-      </div>
-      <div class="card hofheim" data-id="ka-Hofheim-neuwertigesfamilien">
-        <button class="read-btn" onclick="toggleRead('ka-Hofheim-neuwertigesfamilien',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
-        <div class="card-top">
-          <div class="card-img"><div class="no-img">🌄</div></div>
-          <div class="card-info">
-            <div class="card-price">589.000 €</div>
-            <div class="card-details">
-              <span>📐 159 m²</span>
-              <span>🛏️ 4 Zi.</span>
-            </div>
-            <div class="card-title">Neuwertiges Familienhaus mit Wohlfühlfaktor</div>
-          </div>
-        </div>
-        <div class="card-bottom">
-          <span class="source-badge badge-ka">Kleinanzeigen</span>
-          <a href="https://www.kleinanzeigen.de/s-haus-kaufen/hofheim-am-taunus/" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/166955601" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
       <div class="card hofheim" data-id="167360421">
-        <button class="read-btn" onclick="toggleRead('167360421',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('167360421',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/bfc20686-cf7b-4e08-ab98-1a67cb4ca48b-2021080449.jpg" alt="Hofheim-Diedenbergen: Charmantes Einfamilienhaus mit Einliegerwohnung" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">595.000 €</div>
-            <div class="card-details">
-              <span>📐 141 m²</span>
-              <span>🛏️ 6 Zi.</span>
-            </div>
+            <div class="card-details">📐 141 m² · 🛏️ 6 Zi.</div>
             <div class="card-title">Hofheim-Diedenbergen: Charmantes Einfamilienhaus mit Einliegerwohnung</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/167360421" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/167360421" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
       <div class="card hofheim" data-id="is24-Hofheim-hofheimlorsbachau">
-        <button class="read-btn" onclick="toggleRead('is24-Hofheim-hofheimlorsbachau',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('is24-Hofheim-hofheimlorsbachau',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><div class="no-img">🌄</div></div>
           <div class="card-info">
             <div class="card-price">599.000 €</div>
-            <div class="card-details">
-              <span>📐 142 m²</span>
-              <span>🛏️ 4.5 Zi.</span>
-            </div>
+            <div class="card-details">📐 142 m² · 🛏️ 4.5 Zi.</div>
             <div class="card-title">Hofheim-Lorsbach: Außergewöhnliches Einfamilien-Stadthaus</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/Suche/de/hessen/wetteraukreis/hofheim/haus-kaufen" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/Suche/de/hessen/wetteraukreis/hofheim/haus-kaufen" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
       <div class="card hofheim" data-id="165971693">
-        <button class="read-btn" onclick="toggleRead('165971693',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('165971693',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/1b137cfd-b91f-491d-b39d-4222f224d826-1996591097.jpg" alt="Wohnen am Feldrand in Hofheim – modernes Zuhause mit Südterrasse & Balkon" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">679.000 €</div>
-            <div class="card-details">
-              <span>📐 158 m²</span>
-              <span>🛏️ 5 Zi.</span>
-            </div>
+            <div class="card-details">📐 158 m² · 🛏️ 5 Zi.</div>
             <div class="card-title">Wohnen am Feldrand in Hofheim – modernes Zuhause mit Südterrasse & Balkon</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/165971693" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/165971693" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
       <div class="card hofheim" data-id="151591929">
-        <button class="read-btn" onclick="toggleRead('151591929',this)" title="Gelesen / Ungelesen" aria-label="Mark as read">✓</button>
+        <button class="read-btn" onclick="toggleRead('151591929',this)" title="Gelesen">○</button>
         <div class="card-top">
           <div class="card-img"><img src="https://pictures.immobilienscout24.de/listings/e52c786c-a9f7-486b-acde-07b65f06d9f0-1945335703.jpg" alt="Großzügiges Einfamilienhaus mit wunderschönem Garten" loading="lazy"></div>
           <div class="card-info">
             <div class="card-price">699.000 €</div>
-            <div class="card-details">
-              <span>📐 170 m²</span>
-              <span>🛏️ 5 Zi.</span>
-            </div>
+            <div class="card-details">📐 170 m² · 🛏️ 5 Zi.</div>
             <div class="card-title">Großzügiges Einfamilienhaus mit wunderschönem Garten</div>
           </div>
         </div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
-          <a href="https://www.immobilienscout24.de/expose/151591929" target="_blank" rel="noopener" class="card-link">Zum Angebot →</a>
+          <a href="https://www.immobilienscout24.de/expose/151591929" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
         </div>
       </div>
     </div>
   </div>
-</div>
 
+</div>
 <footer class="footer">
   Stand 10.05.2026 · Kriterien: 135–170 m² · max 770.000 € · kein Neubau/Fertighaus-Spam
-  <br><a href="https://github.com/philippthoma91/immobiliensuche">Quellcode auf GitHub</a>
 </footer>
-
 <script>
-// ---- Read state management ----
-const LS_KEY = 'immo_read_ids';
-let readIds = new Set();
-let hideRead = false;
-
-// Load read.json from repo (my updates), merge with localStorage (your clicks)
-async function initReadState() {
-  // 1. Try loading read.json from the repo
-  try {
-    const resp = await fetch('read.json?t=' + Date.now());
-    const data = await resp.json();
-    if (data.read && Array.isArray(data.read)) {
-      data.read.forEach(id => readIds.add(id));
-      console.log('Loaded ' + data.read.length + ' IDs from read.json');
-    }
-  } catch(e) {
-    console.log('read.json not loaded (may not exist yet):', e.message);
-  }
-
-  // 2. Merge with localStorage (your local clicks survive the repo state)
-  try {
-    const local = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
-    local.forEach(id => readIds.add(id));
-  } catch(e) {}
-
-  // 3. Apply to DOM
-  applyReadState();
-  updateStats();
+const LS_KEY='immo_read_ids';
+let readIds=new Set(),hideRead=false;
+async function initReadState(){
+  try{const r=await fetch('read.json?t='+Date.now());const d=await r.json();if(d.read)d.read.forEach(id=>readIds.add(id))}catch(e){}
+  try{JSON.parse(localStorage.getItem(LS_KEY)||'[]').forEach(id=>readIds.add(id))}catch(e){}
+  applyReadState();updateStats();
 }
-
-function applyReadState() {
-  document.querySelectorAll('.card').forEach(card => {
-    const id = card.dataset.id;
-    const btn = card.querySelector('.read-btn');
-    if (readIds.has(id)) {
-      card.classList.add('read');
-      btn.classList.add('checked');
-      btn.textContent = '✓';
-    } else {
-      card.classList.remove('read');
-      btn.classList.remove('checked');
-      btn.textContent = '○';
-    }
-    // Also respect hideRead toggle
-    if (hideRead && readIds.has(id)) {
-      card.style.display = 'none';
-    } else {
-      card.style.display = '';
-    }
+function applyReadState(){
+  document.querySelectorAll('.card').forEach(c=>{
+    const id=c.dataset.id,btn=c.querySelector('.read-btn');
+    if(readIds.has(id)){c.classList.add('read');btn.classList.add('checked');btn.textContent='✓'}
+    else{c.classList.remove('read');btn.classList.remove('checked');btn.textContent='○'}
+    c.style.display=(hideRead&&readIds.has(id))?'none':'';
   });
 }
-
-function toggleRead(id, btn) {
-  if (readIds.has(id)) {
-    readIds.delete(id);
-  } else {
-    readIds.add(id);
-  }
-  // Persist to localStorage
-  localStorage.setItem(LS_KEY, JSON.stringify([...readIds]));
-  // Update DOM
-  applyReadState();
-  updateStats();
+function toggleRead(id,btn){
+  readIds.has(id)?readIds.delete(id):readIds.add(id);
+  localStorage.setItem(LS_KEY,JSON.stringify([...readIds]));
+  applyReadState();updateStats();
 }
-
-function markAll(action) {
-  const cards = document.querySelectorAll('.card');
-  if (action === 'read') {
-    cards.forEach(c => readIds.add(c.dataset.id));
-  } else {
-    cards.forEach(c => readIds.delete(c.dataset.id));
-  }
-  localStorage.setItem(LS_KEY, JSON.stringify([...readIds]));
-  applyReadState();
-  updateStats();
+function markAll(a){
+  document.querySelectorAll('.card').forEach(c=>a==='read'?readIds.add(c.dataset.id):readIds.delete(c.dataset.id));
+  localStorage.setItem(LS_KEY,JSON.stringify([...readIds]));
+  applyReadState();updateStats();
 }
-
-function toggleShowRead() {
-  hideRead = !hideRead;
-  const btn = document.getElementById('btn-show-read');
-  if (hideRead) {
-    btn.classList.add('active');
-    btn.innerHTML = '👁️ Gelesene <span class="count">ausgeblendet</span>';
-  } else {
-    btn.classList.remove('active');
-    btn.innerHTML = '👁️ Gelesene <span class="count">ausblenden</span>';
-  }
+function toggleShowRead(){
+  hideRead=!hideRead;
+  const b=document.getElementById('btn-show-read');
+  hideRead?(b.classList.add('active'),b.innerHTML='👁️ Gelesene ausgeblendet'):(b.classList.remove('active'),b.innerHTML='👁️ Gelesene ausblenden');
   applyReadState();
 }
-
-function updateStats() {
-  const total = document.querySelectorAll('.card').length;
-  const read = readIds.size;
-  const unread = total - read;
-  
-  document.getElementById('stat-total').querySelector('.stat-num').textContent = total;
-  document.getElementById('stat-new').querySelector('.stat-num').textContent = unread;
+function updateStats(){
+  const t=document.querySelectorAll('.card').length,u=t-readIds.size;
+  document.getElementById('stat-new').querySelector('.stat-num').textContent=u;
 }
-
-// Init on load
 initReadState();
 </script>
-
 </body>
 </html>

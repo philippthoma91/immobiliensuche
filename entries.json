@@ -22,14 +22,23 @@
     "quelle": "ImmoScout24"
   },
   {
-    "id": "ka-Karben-hausniedermockstad",
     "city": "Karben",
-    "preis": "449.000 €",
-    "flaeche": "140 m²",
-    "zimmer": "4",
+    "preis": 399000.0,
+    "flaeche": 142.0,
+    "zimmer": 6.0,
+    "titel": "Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz",
+    "link": "https://www.kleinanzeigen.de/s-anzeige/karben-petterweil-familienfreundliches-reihenendhaus-mit-garten-und-viel-platz/3380673586-208-4526",
+    "adid": "3380673586",
+    "quelle": "Kleinanzeigen"
+  },
+  {
+    "city": "Karben",
+    "preis": 449000.0,
+    "flaeche": 140.0,
+    "zimmer": 4.0,
     "titel": "Haus Nieder Mockstadt",
-    "link": "https://www.kleinanzeigen.de/s-haus-kaufen/karben/",
-    "img": null,
+    "link": "https://www.kleinanzeigen.de/s-anzeige/haus-nieder-mockstadt/3380688412-208-4526",
+    "adid": "3380688412",
     "quelle": "Kleinanzeigen"
   },
   {
@@ -55,25 +64,33 @@
     "quelle": "ImmoScout24"
   },
   {
-    "id": "ka-Karben-lagelagelageruh",
     "city": "Karben",
-    "preis": "559.800 €",
-    "flaeche": "144 m²",
-    "zimmer": "6",
-    "titel": "Lage Lage Lage – ruhige Feldrandlage",
-    "link": "https://www.kleinanzeigen.de/s-haus-kaufen/karben/",
-    "img": null,
+    "preis": 559800.0,
+    "flaeche": 144.0,
+    "zimmer": 6.0,
+    "titel": "* * * Lage Lage Lage * * *  Wenn Ihnen die Lage wichtig ist   * Ruhige Feldrand Lage *",
+    "link": "https://www.kleinanzeigen.de/s-anzeige/-lage-lage-lage-wenn-ihnen-die-lage-wichtig-ist-ruhige-feldrand-lage-/3228730368-208-4526",
+    "adid": "3228730368",
     "quelle": "Kleinanzeigen"
   },
   {
-    "id": "ka-Karben-reihenmittelhausin",
     "city": "Karben",
-    "preis": "565.000 €",
-    "flaeche": "144 m²",
-    "zimmer": "5",
-    "titel": "Reihenmittelhaus in Karben – 144 m², 5 Zimmer",
-    "link": "https://www.kleinanzeigen.de/s-haus-kaufen/karben/",
-    "img": null,
+    "preis": 565000.0,
+    "flaeche": 144.0,
+    "zimmer": 5.0,
+    "titel": "Reihenmittelhaus in Karben – 144 m², 5 Zimmer | VHB 565.000 €",
+    "link": "https://www.kleinanzeigen.de/s-anzeige/reihenmittelhaus-in-karben-144-m-5-zimmer-vhb-565-000-/3387043884-208-4526",
+    "adid": "3387043884",
+    "quelle": "Kleinanzeigen"
+  },
+  {
+    "city": "Karben",
+    "preis": 574900.0,
+    "flaeche": 141.97,
+    "zimmer": 5.0,
+    "titel": "*Wohnen mit Freunden in Karben-Petterweil?* GROßE DOPPELHAUSHÄLFTE auf 250m² Grundstück",
+    "link": "https://www.kleinanzeigen.de/s-anzeige/-wohnen-mit-freunden-in-karben-petterweil-grosse-doppelhaushaelfte-auf-250m-grundstueck/3334314965-208-4526",
+    "adid": "3334314965",
     "quelle": "Kleinanzeigen"
   },
   {
@@ -121,17 +138,6 @@
     "quelle": "ImmoScout24"
   },
   {
-    "id": "ka-Bad Vilbel-architekturmitweit",
-    "city": "Bad Vilbel",
-    "preis": "616.000 €",
-    "flaeche": "148 m²",
-    "zimmer": "4",
-    "titel": "ARCHITEKTUR MIT WEITBLICK UND SCHÖNEM GRUNDSTÜCK",
-    "link": "https://www.kleinanzeigen.de/s-haus-kaufen/bad-vilbel/",
-    "img": null,
-    "quelle": "Kleinanzeigen"
-  },
-  {
     "id": "166986360",
     "city": "Bad Vilbel",
     "preis": "649.000 €",
@@ -152,17 +158,6 @@
     "link": "https://www.immobilienscout24.de/expose/166955601",
     "img": "https://pictures.immobilienscout24.de/listings/27af6eaf-5cb1-47a2-a31c-bf560e438725-2013912471.jpg",
     "quelle": "ImmoScout24"
-  },
-  {
-    "id": "ka-Hofheim-neuwertigesfamilien",
-    "city": "Hofheim",
-    "preis": "589.000 €",
-    "flaeche": "159 m²",
-    "zimmer": "4",
-    "titel": "Neuwertiges Familienhaus mit Wohlfühlfaktor",
-    "link": "https://www.kleinanzeigen.de/s-haus-kaufen/hofheim-am-taunus/",
-    "img": null,
-    "quelle": "Kleinanzeigen"
   },
   {
     "id": "167360421",
