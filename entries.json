@@ -12,7 +12,10 @@
     "published": "vor einem Monat",
     "bodenrichtwert": "ca. 370–520 €/m²",
     "bodenrichtwert_basis": "Karben / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "138 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "202 m²"
   },
   {
     "id": "166930009",
@@ -28,7 +31,10 @@
     "stadtteil": "Petterweil",
     "bodenrichtwert": "ca. 370–450 €/m²",
     "bodenrichtwert_basis": "Karben-Petterweil / Ortsteil-Orientierung 2026",
-    "bodenrichtwert_confidence": "niedrig"
+    "bodenrichtwert_confidence": "niedrig",
+    "wohnflaeche": "142 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "283 m²"
   },
   {
     "city": "Karben",
@@ -43,7 +49,10 @@
     "stadtteil": "Petterweil",
     "bodenrichtwert": "ca. 370–450 €/m²",
     "bodenrichtwert_basis": "Karben-Petterweil / Ortsteil-Orientierung 2026",
-    "bodenrichtwert_confidence": "niedrig"
+    "bodenrichtwert_confidence": "niedrig",
+    "wohnflaeche": "142 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": ""
   },
   {
     "city": "Karben",
@@ -58,7 +67,10 @@
     "stadtteil": "Nieder Mockstadt",
     "bodenrichtwert": "ca. 250–330 €/m²",
     "bodenrichtwert_basis": "Nieder-Mockstadt/Florstadt-Umland Orientierung 2026",
-    "bodenrichtwert_confidence": "niedrig"
+    "bodenrichtwert_confidence": "niedrig",
+    "wohnflaeche": "140 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": ""
   },
   {
     "id": "159627742",
@@ -74,7 +86,10 @@
     "stadtteil": "Rendel",
     "bodenrichtwert": "ca. 370–450 €/m²",
     "bodenrichtwert_basis": "Karben-Rendel / Ortsteil-Orientierung 2026",
-    "bodenrichtwert_confidence": "niedrig"
+    "bodenrichtwert_confidence": "niedrig",
+    "wohnflaeche": "154,82 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "170 m²"
   },
   {
     "city": "Karben",
@@ -88,7 +103,10 @@
     "img": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/64/646c8249-5b88-4027-bba7-584be9f82fed?rule=$_59.JPG",
     "bodenrichtwert": "ca. 370–520 €/m²",
     "bodenrichtwert_basis": "Karben / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "144 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": ""
   },
   {
     "id": "162463213",
@@ -103,7 +121,10 @@
     "published": "vor 6 Monaten",
     "bodenrichtwert": "ca. 370–520 €/m²",
     "bodenrichtwert_basis": "Karben / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "144 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "457 m²"
   },
   {
     "city": "Karben",
@@ -117,7 +138,10 @@
     "img": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/15/156edb44-9408-43b6-85d6-88d8d4a2b222?rule=$_59.JPG",
     "bodenrichtwert": "ca. 370–520 €/m²",
     "bodenrichtwert_basis": "Karben / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "144 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": ""
   },
   {
     "city": "Karben",
@@ -132,7 +156,10 @@
     "stadtteil": "Petterweil",
     "bodenrichtwert": "ca. 370–450 €/m²",
     "bodenrichtwert_basis": "Karben-Petterweil / Ortsteil-Orientierung 2026",
-    "bodenrichtwert_confidence": "niedrig"
+    "bodenrichtwert_confidence": "niedrig",
+    "wohnflaeche": "141,97 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": ""
   },
   {
     "id": "154633802",
@@ -147,7 +174,10 @@
     "published": "vor 2 Jahren",
     "bodenrichtwert": "ca. 370–520 €/m²",
     "bodenrichtwert_basis": "Karben / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "152 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "915 m²"
   },
   {
     "id": "is24-Karben-hierwerdenwohntru",
@@ -161,7 +191,10 @@
     "quelle": "ImmoScout24",
     "bodenrichtwert": "ca. 370–520 €/m²",
     "bodenrichtwert_basis": "Karben / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "158 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": ""
   },
   {
     "id": "167361279",
@@ -176,7 +209,10 @@
     "published": "vor 11 Tagen",
     "bodenrichtwert": "ca. 370–520 €/m²",
     "bodenrichtwert_basis": "Karben / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "232 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "321 m²"
   },
   {
     "id": "zvg-2219786",
@@ -195,7 +231,10 @@
     "flaeche_num": 181.0,
     "bodenrichtwert": "ca. 800–840 €/m²",
     "bodenrichtwert_basis": "Bad Vilbel / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "181 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": ""
   },
   {
     "id": "167440501",
@@ -210,7 +249,10 @@
     "published": "vor 7 Tagen",
     "bodenrichtwert": "ca. 800–840 €/m²",
     "bodenrichtwert_basis": "Bad Vilbel / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "140 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "125 m²"
   },
   {
     "id": "166986360",
@@ -225,7 +267,10 @@
     "published": "vor einem Monat",
     "bodenrichtwert": "ca. 800–840 €/m²",
     "bodenrichtwert_basis": "Bad Vilbel / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "150 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "251 m²"
   },
   {
     "id": "zvg-2219994",
@@ -244,7 +289,10 @@
     "flaeche_num": 217.4,
     "bodenrichtwert": "ca. 800–840 €/m²",
     "bodenrichtwert_basis": "Bad Vilbel / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "217,4 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": ""
   },
   {
     "id": "166955601",
@@ -260,7 +308,10 @@
     "stadtteil": "Lorsbach",
     "bodenrichtwert": "ca. 600–750 €/m²",
     "bodenrichtwert_basis": "Hofheim-Lorsbach / Ortsteil-Orientierung 2026",
-    "bodenrichtwert_confidence": "niedrig"
+    "bodenrichtwert_confidence": "niedrig",
+    "wohnflaeche": "161 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "471 m²"
   },
   {
     "id": "167360421",
@@ -274,7 +325,10 @@
     "quelle": "ImmoScout24",
     "bodenrichtwert": "ca. 650–780 €/m²",
     "bodenrichtwert_basis": "Hofheim-Diedenbergen / Ortsteil-Orientierung 2026",
-    "bodenrichtwert_confidence": "niedrig"
+    "bodenrichtwert_confidence": "niedrig",
+    "wohnflaeche": "141 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "232 m²"
   },
   {
     "id": "is24-Hofheim-hofheimlorsbachau",
@@ -288,7 +342,10 @@
     "quelle": "ImmoScout24",
     "bodenrichtwert": "ca. 600–750 €/m²",
     "bodenrichtwert_basis": "Hofheim-Lorsbach / Ortsteil-Orientierung 2026",
-    "bodenrichtwert_confidence": "niedrig"
+    "bodenrichtwert_confidence": "niedrig",
+    "wohnflaeche": "142 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": ""
   },
   {
     "id": "165971693",
@@ -303,7 +360,10 @@
     "published": "vor 2 Monaten",
     "bodenrichtwert": "ca. 770–850 €/m²",
     "bodenrichtwert_basis": "Hofheim am Taunus / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "158 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "100 m²"
   },
   {
     "id": "151591929",
@@ -318,6 +378,9 @@
     "published": "vor 2 Jahren",
     "bodenrichtwert": "ca. 770–850 €/m²",
     "bodenrichtwert_basis": "Hofheim am Taunus / BORIS-D Orientierung 2026",
-    "bodenrichtwert_confidence": "mittel"
+    "bodenrichtwert_confidence": "mittel",
+    "wohnflaeche": "186 m²",
+    "nutzflaeche": "",
+    "grundstuecksflaeche": "569 m²"
   }
 ]
