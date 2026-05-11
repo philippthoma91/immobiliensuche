@@ -139,9 +139,13 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 .badge-zvg{background:rgba(250,204,21,0.14);color:#facc15}.card-link.zvg{color:#facc15}.card-link.zvg:hover{color:#fde047}.no-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:34px;background:linear-gradient(135deg,#2a2a3a,#1a1a24);color:#facc15}
 
 .badge-zvg{background:rgba(250,204,21,0.14);color:#facc15}.card-link.zvg{color:#facc15}.card-link.zvg:hover{color:#fde047}.no-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:34px;background:linear-gradient(135deg,#2a2a3a,#1a1a24);color:#facc15}
+
+.badge-zvg{background:rgba(250,204,21,0.14);color:#facc15}.card-link.zvg{color:#facc15}.card-link.zvg:hover{color:#fde047}.no-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:34px;background:linear-gradient(135deg,#2a2a3a,#1a1a24);color:#facc15}
+.bodenrichtwert{display:inline-block;font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(250,204,21,.12);color:#facc15;border:1px solid rgba(250,204,21,.22);font-weight:650}.bodenrichtwert.brw-low{color:#fbbf24;border-style:dashed;opacity:.92}.boden-note{margin:-20px auto 28px;max-width:980px;color:var(--muted);font-size:12px;text-align:center;line-height:1.45}.boden-note a{color:#facc15;text-decoration:none}.boden-note a:hover{text-decoration:underline}
+
 </style></head><body>
-<header><h1>📦 <span>Archiv</span></h1><div class="stats"><div class="stat" id="stat-total"><div class="stat-num">21</div><div class="stat-label">Objekte</div></div><div class="stat" id="stat-new"><div class="stat-num">21</div><div class="stat-label">Ungelesen</div></div><div class="stat" id="stat-archive"><div class="stat-num" style="color:var(--muted)">0</div><div class="stat-label">Archiv</div></div><div class="stat"><div class="stat-num">3</div><div class="stat-label">Städte</div></div><div class="stat"><div class="stat-num">21</div><div class="stat-label">Makler</div></div><div class="stat"><div class="stat-num">2</div><div class="stat-label">ZVG</div></div><div class="stat"><div class="stat-num">770K</div><div class="stat-label">Max Preis €</div></div></div><div class="toolbar"><button class="btn" onclick="markAll('read')">✅ Alle gelesen</button><button class="btn" onclick="markAll('unread')">🔄 Alle ungelesen</button><button class="btn active" id="btn-show-read" onclick="toggleShowRead()">👁️ Gelesene ausgeblendet</button><a href="index.html" class="nav-link">← Zurück zur Suche</a><a href="archive.html" class="nav-link">📦 Archiv <span class="archive-badge" id="archive-count">0</span></a></div></header>
-<div class="container"><div class="city-section">
+<header><h1>📦 <span>Archiv</span></h1><div class="stats"><div class="stat" id="stat-total"><div class="stat-num">21</div><div class="stat-label">Objekte</div></div><div class="stat" id="stat-new"><div class="stat-num">21</div><div class="stat-label">Ungelesen</div></div><div class="stat" id="stat-archive"><div class="stat-num" style="color:var(--muted)">0</div><div class="stat-label">Archiv</div></div><div class="stat"><div class="stat-num">3</div><div class="stat-label">Städte</div></div><div class="stat"><div class="stat-num">21</div><div class="stat-label">Makler</div></div><div class="stat"><div class="stat-num">2</div><div class="stat-label">ZVG</div></div><div class="stat"><div class="stat-num">BRW</div><div class="stat-label">Bodenwerte</div></div><div class="stat"><div class="stat-num">770K</div><div class="stat-label">Max Preis €</div></div></div><div class="toolbar"><button class="btn" onclick="markAll('read')">✅ Alle gelesen</button><button class="btn" onclick="markAll('unread')">🔄 Alle ungelesen</button><button class="btn active" id="btn-show-read" onclick="toggleShowRead()">👁️ Gelesene ausgeblendet</button><a href="index.html" class="nav-link">← Zurück zur Suche</a><a href="archive.html" class="nav-link">📦 Archiv <span class="archive-badge" id="archive-count">0</span></a></div></header>
+<div class="container"><div class="boden-note">Bodenrichtwerte sind <b>Orientierungswerte</b> je Stadt/Ortsteil, nicht adressgenau. Amtlich prüfen: <a href="https://www.bodenrichtwerte-boris.de/boris-d/" target="_blank" rel="noopener">BORIS-D</a> / Gutachterausschuss. Besonders wichtig bei großem Grundstück oder Abrisshaus.</div><div class="city-section">
 <div class="city-title c-karben"><span class="dot"></span>🌳 Karben · <span style="color:var(--muted);font-size:14px">12 Objekte</span></div>
 <div class="grid">
 
@@ -155,7 +159,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Reihenendhaus in idyllischer Lage inkl. Taunusblick</div>
           </div>
         </div>
-          <div class="card-extras"><span class="alter-info">🕐 vor einem Monat</span></div>
+          <div class="card-extras"><span class="alter-info">🕐 vor einem Monat</span> <span class="bodenrichtwert brw-mid" title="Karben / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 370–520 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/166992150" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -171,7 +175,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz</div>
           </div>
         </div>
-          <div class="card-extras"><span class="stadtteil-badge">Petterweil</span> <span class="alter-info">🕐 vor einem Monat</span></div>
+          <div class="card-extras"><span class="stadtteil-badge">Petterweil</span> <span class="alter-info">🕐 vor einem Monat</span> <span class="bodenrichtwert brw-low" title="Karben-Petterweil / Ortsteil-Orientierung 2026; Genauigkeit: niedrig">🏷️ Boden: ca. 370–450 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/166930009" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -187,7 +191,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Karben-Petterweil: Familienfreundliches Reihenendhaus mit Garten und viel Platz</div>
           </div>
         </div>
-          <div class="card-extras"><span class="stadtteil-badge">Petterweil</span></div>
+          <div class="card-extras"><span class="stadtteil-badge">Petterweil</span> <span class="bodenrichtwert brw-low" title="Karben-Petterweil / Ortsteil-Orientierung 2026; Genauigkeit: niedrig">🏷️ Boden: ca. 370–450 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-ka">Kleinanzeigen</span>
           <a href="https://www.kleinanzeigen.de/s-anzeige/karben-petterweil-familienfreundliches-reihenendhaus-mit-garten-und-viel-platz/3380673586-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
@@ -203,7 +207,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Haus Nieder Mockstadt</div>
           </div>
         </div>
-          <div class="card-extras"><span class="stadtteil-badge">Nieder Mockstadt</span></div>
+          <div class="card-extras"><span class="stadtteil-badge">Nieder Mockstadt</span> <span class="bodenrichtwert brw-low" title="Nieder-Mockstadt/Florstadt-Umland Orientierung 2026; Genauigkeit: niedrig">🏷️ Boden: ca. 250–330 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-ka">Kleinanzeigen</span>
           <a href="https://www.kleinanzeigen.de/s-anzeige/haus-nieder-mockstadt/3380688412-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
@@ -219,7 +223,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Nur noch 1 charmantes RMH verfügbar, Ihr neues Zuhause wartet auf Sie in Karben OT Rendel</div>
           </div>
         </div>
-          <div class="card-extras"><span class="stadtteil-badge">Rendel</span> <span class="alter-info">🕐 vor einem Jahr</span></div>
+          <div class="card-extras"><span class="stadtteil-badge">Rendel</span> <span class="alter-info">🕐 vor einem Jahr</span> <span class="bodenrichtwert brw-low" title="Karben-Rendel / Ortsteil-Orientierung 2026; Genauigkeit: niedrig">🏷️ Boden: ca. 370–450 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/159627742" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -235,6 +239,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">* * * Lage Lage Lage * * *  Wenn Ihnen die Lage wichtig ist   * Ruhige Feldrand Lage *</div>
           </div>
         </div>
+          <div class="card-extras"><span class="bodenrichtwert brw-mid" title="Karben / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 370–520 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-ka">Kleinanzeigen</span>
           <a href="https://www.kleinanzeigen.de/s-anzeige/-lage-lage-lage-wenn-ihnen-die-lage-wichtig-ist-ruhige-feldrand-lage-/3228730368-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
@@ -250,7 +255,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Lage Lage Lage – ruhige Feldrandlage</div>
           </div>
         </div>
-          <div class="card-extras"><span class="alter-info">🕐 vor 6 Monaten</span></div>
+          <div class="card-extras"><span class="alter-info">🕐 vor 6 Monaten</span> <span class="bodenrichtwert brw-mid" title="Karben / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 370–520 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/162463213" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -266,6 +271,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Reihenmittelhaus in Karben – 144 m², 5 Zimmer | VHB 565.000 €</div>
           </div>
         </div>
+          <div class="card-extras"><span class="bodenrichtwert brw-mid" title="Karben / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 370–520 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-ka">Kleinanzeigen</span>
           <a href="https://www.kleinanzeigen.de/s-anzeige/reihenmittelhaus-in-karben-144-m-5-zimmer-vhb-565-000-/3387043884-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
@@ -281,7 +287,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">*Wohnen mit Freunden in Karben-Petterweil?* GROßE DOPPELHAUSHÄLFTE auf 250m² Grundstück</div>
           </div>
         </div>
-          <div class="card-extras"><span class="stadtteil-badge">Petterweil</span></div>
+          <div class="card-extras"><span class="stadtteil-badge">Petterweil</span> <span class="bodenrichtwert brw-low" title="Karben-Petterweil / Ortsteil-Orientierung 2026; Genauigkeit: niedrig">🏷️ Boden: ca. 370–450 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-ka">Kleinanzeigen</span>
           <a href="https://www.kleinanzeigen.de/s-anzeige/-wohnen-mit-freunden-in-karben-petterweil-grosse-doppelhaushaelfte-auf-250m-grundstueck/3334314965-208-4526" target="_blank" rel="noopener" class="card-link ka">Zum Angebot →</a>
@@ -297,7 +303,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Abrisshaus mit großem und schönem Grundstück in Top Lage</div>
           </div>
         </div>
-          <div class="card-extras"><span class="alter-info">🕐 vor 2 Jahren</span></div>
+          <div class="card-extras"><span class="alter-info">🕐 vor 2 Jahren</span> <span class="bodenrichtwert brw-mid" title="Karben / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 370–520 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/154633802" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -313,6 +319,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Hier werden Wohnträume wahr: Stilvolle Doppelhaushälfte mit Sauna</div>
           </div>
         </div>
+          <div class="card-extras"><span class="bodenrichtwert brw-mid" title="Karben / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 370–520 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/Suche/de/hessen/wetteraukreis/karben/haus-kaufen" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -328,7 +335,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Kernsaniertes 1–2-Familienhaus mit PV, Speicher &amp; Brunnen</div>
           </div>
         </div>
-          <div class="card-extras"><span class="alter-info">🕐 vor 11 Tagen</span></div>
+          <div class="card-extras"><span class="alter-info">🕐 vor 11 Tagen</span> <span class="bodenrichtwert brw-mid" title="Karben / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 370–520 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/167361279" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -349,7 +356,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Freistehendes 1- bis 2-Familienhaus mit Garten und mind. 4 Stellplätzen</div>
           </div>
         </div>
-          <div class="card-extras"><span class="alter-info">⚖️ Termin 23.06.2026 10:00</span> <span class="stadtteil-badge">61118 Bad Vilbel, Bad Vilbeler Straße</span></div>
+          <div class="card-extras"><span class="alter-info">⚖️ Termin 23.06.2026 10:00</span> <span class="stadtteil-badge">61118 Bad Vilbel, Bad Vilbeler Straße</span> <span class="bodenrichtwert brw-mid" title="Bad Vilbel / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 800–840 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-zvg">ZVG</span>
           <a href="https://www.zwangsversteigerungen-brd.de/ObjektDetails/2219786" target="_blank" rel="noopener" class="card-link zvg">Zum Angebot →</a>
@@ -365,7 +372,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Bad Vilbel: Gepflegtes Stadthaus mit viel Platz!</div>
           </div>
         </div>
-          <div class="card-extras"><span class="alter-info">🕐 vor 7 Tagen</span></div>
+          <div class="card-extras"><span class="alter-info">🕐 vor 7 Tagen</span> <span class="bodenrichtwert brw-mid" title="Bad Vilbel / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 800–840 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/167440501" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -381,7 +388,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Reihenmittelhaus mit Garten, Balkon und Keller in Toplage</div>
           </div>
         </div>
-          <div class="card-extras"><span class="alter-info">🕐 vor einem Monat</span></div>
+          <div class="card-extras"><span class="alter-info">🕐 vor einem Monat</span> <span class="bodenrichtwert brw-mid" title="Bad Vilbel / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 800–840 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/166986360" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -397,7 +404,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Freistehendes 2-Familienhaus nebst Garten und Garage</div>
           </div>
         </div>
-          <div class="card-extras"><span class="alter-info">⚖️ Termin 30.06.2026 10:00</span> <span class="stadtteil-badge">61118 Bad Vilbel, Ringstraße</span></div>
+          <div class="card-extras"><span class="alter-info">⚖️ Termin 30.06.2026 10:00</span> <span class="stadtteil-badge">61118 Bad Vilbel, Ringstraße</span> <span class="bodenrichtwert brw-mid" title="Bad Vilbel / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 800–840 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-zvg">ZVG</span>
           <a href="https://www.zwangsversteigerungen-brd.de/ObjektDetails/2219994" target="_blank" rel="noopener" class="card-link zvg">Zum Angebot →</a>
@@ -418,7 +425,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Ruhige Top-Lage! Gemütliches EFH mit Einliegerwohnung in Lorsbach</div>
           </div>
         </div>
-          <div class="card-extras"><span class="stadtteil-badge">Lorsbach</span> <span class="alter-info">🕐 vor einem Monat</span></div>
+          <div class="card-extras"><span class="stadtteil-badge">Lorsbach</span> <span class="alter-info">🕐 vor einem Monat</span> <span class="bodenrichtwert brw-low" title="Hofheim-Lorsbach / Ortsteil-Orientierung 2026; Genauigkeit: niedrig">🏷️ Boden: ca. 600–750 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/166955601" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -434,6 +441,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Hofheim-Diedenbergen: Charmantes Einfamilienhaus mit Einliegerwohnung</div>
           </div>
         </div>
+          <div class="card-extras"><span class="bodenrichtwert brw-low" title="Hofheim-Diedenbergen / Ortsteil-Orientierung 2026; Genauigkeit: niedrig">🏷️ Boden: ca. 650–780 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/167360421" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -449,6 +457,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Hofheim-Lorsbach: Außergewöhnliches Einfamilien-Stadthaus</div>
           </div>
         </div>
+          <div class="card-extras"><span class="bodenrichtwert brw-low" title="Hofheim-Lorsbach / Ortsteil-Orientierung 2026; Genauigkeit: niedrig">🏷️ Boden: ca. 600–750 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/Suche/de/hessen/wetteraukreis/hofheim/haus-kaufen" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -464,7 +473,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Wohnen am Feldrand in Hofheim – modernes Zuhause mit Südterrasse &amp; Balkon</div>
           </div>
         </div>
-          <div class="card-extras"><span class="alter-info">🕐 vor 2 Monaten</span></div>
+          <div class="card-extras"><span class="alter-info">🕐 vor 2 Monaten</span> <span class="bodenrichtwert brw-mid" title="Hofheim am Taunus / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 770–850 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/165971693" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -480,7 +489,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
             <div class="card-title">Großzügiges Einfamilienhaus mit wunderschönem Garten</div>
           </div>
         </div>
-          <div class="card-extras"><span class="alter-info">🕐 vor 2 Jahren</span></div>
+          <div class="card-extras"><span class="alter-info">🕐 vor 2 Jahren</span> <span class="bodenrichtwert brw-mid" title="Hofheim am Taunus / BORIS-D Orientierung 2026; Genauigkeit: mittel">🏷️ Boden: ca. 770–850 €/m²</span></div>
         <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/151591929" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
@@ -724,5 +733,5 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
   </div>
   <div class="broker-note">Hinweis: Webscan am 11.05.2026: keine sicheren neuen Treffer nach Kriterien gefunden. Die Liste dient als regionale Makler-Übersicht und Kontaktbasis für Off-Market-Angebote.</div>
 </section></div>
-<footer class="footer">Stand 11.05.2026 · Kriterien: max 770.000 € · kein Neubau/Fertighaus-Spam · ZVG: Häuser/Grundstücke regional gefiltert · <a href="archive.html" style="color:var(--accent)">📦 Archiv</a></footer>
+<footer class="footer">Stand 11.05.2026 · Kriterien: max 770.000 € · Bodenrichtwerte: Orientierung, amtlich via BORIS-D prüfen · <a href="archive.html" style="color:var(--accent)">📦 Archiv</a></footer>
 <script>const LS_KEY='immo_read_ids';let readIds=new Set(),hideRead=false;async function initReadState(){try{const r=await fetch('read.json?t='+Date.now());const d=await r.json();if(d.read)d.read.forEach(id=>readIds.add(id))}catch(e){}try{JSON.parse(localStorage.getItem(LS_KEY)||'[]').forEach(id=>readIds.add(id))}catch(e){}applyReadState();updateStats();}function applyReadState(){document.querySelectorAll('.card').forEach(c=>{const id=c.dataset.id,btn=c.querySelector('.read-btn');if(readIds.has(id)){c.classList.add('read');btn.classList.add('checked');btn.textContent='✓'}else{c.classList.remove('read');btn.classList.remove('checked');btn.textContent='○'}c.style.display=readIds.has(id)?'':'none';});}function toggleRead(id,btn){readIds.has(id)?readIds.delete(id):readIds.add(id);localStorage.setItem(LS_KEY,JSON.stringify([...readIds]));applyReadState();updateStats();}function markAll(a){document.querySelectorAll('.card').forEach(c=>a==='read'?readIds.add(c.dataset.id):readIds.delete(c.dataset.id));localStorage.setItem(LS_KEY,JSON.stringify([...readIds]));applyReadState();updateStats();}function toggleShowRead(){hideRead=!hideRead;const b=document.getElementById('btn-show-read');hideRead?(b.classList.add('active'),b.innerHTML='👁️ Gelesene ausgeblendet'):(b.classList.remove('active'),b.innerHTML='👁️ Gelesene ausblenden');applyReadState();}function updateStats(){const t=document.querySelectorAll('.card').length,u=t-readIds.size;document.getElementById('stat-new').querySelector('.stat-num').textContent=u;const aEl=document.getElementById('archive-count');if(aEl)aEl.textContent=readIds.size;const statA=document.getElementById('stat-archive');if(statA)statA.querySelector('.stat-num').textContent=readIds.size;}initReadState();</script></body></html>
