@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Immobiliensuche – Karben · Bad Vilbel · Hofheim</title>
+<title>Archiv – Immobiliensuche</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -105,6 +105,8 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 .card.karben{border-left:3px solid var(--karben)}
 .card.vilbel{border-left:3px solid var(--vilbel)}
 .card.hofheim{border-left:3px solid var(--hofheim)}
+.card .read-btn{display:none}
+.card.read{opacity:.6;filter:grayscale(.4)}
 .nav-link{color:var(--accent);text-decoration:none;font-size:13px;font-weight:500;padding:6px 12px;border-radius:20px;border:1px solid var(--border);transition:all .15s}
 .nav-link:hover{background:var(--surface);border-color:var(--accent)}
 .archive-badge{background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:12px;font-size:11px;color:var(--muted)}
@@ -113,19 +115,13 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 </head>
 <body>
 <header>
-  <h1>🏠 <span>Immobiliensuche</span></h1>
+  <h1>📦 <span>Archiv – Gelesene Immobilien</span></h1>
   <div class="stats">
-    <div class="stat" id="stat-total"><div class="stat-num">19</div><div class="stat-label">Objekte</div></div>
-    <div class="stat" id="stat-new"><div class="stat-num">19</div><div class="stat-label">Ungelesen</div></div>
-    <div class="stat" id="stat-archive"><div class="stat-num" style="color:var(--muted)">0</div><div class="stat-label">Archiv</div></div>
-    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Städte</div></div>
-    <div class="stat"><div class="stat-num">770K</div><div class="stat-label">Max Preis €</div></div>
+    <div class="stat"><div class="stat-num" id="stat-count">0</div><div class="stat-label">Archiviert</div></div>
   </div>
   <div class="toolbar">
-    <button class="btn" onclick="markAll('read')">✅ Alle gelesen</button>
-    <button class="btn" onclick="markAll('unread')">🔄 Alle ungelesen</button>
-    <button class="btn active" id="btn-show-read" onclick="toggleShowRead()">👁️ Gelesene ausgeblendet</button>
-    <a href="archive.html" class="nav-link">📦 Archiv <span class="archive-badge" id="archive-count">0</span></a>
+    <button class="btn" onclick="markAllUnread()">🔄 Alle wiederherstellen</button>
+    <a href="index.html" class="nav-link">← Zurück zur Suche</a>
   </div>
 </header>
 <div class="container">
@@ -438,47 +434,46 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 
 </div>
 <footer class="footer">
-  Stand 10.05.2026 · Kriterien: 135–170 m² · max 770.000 € · kein Neubau/Fertighaus-Spam · <a href="archive.html" style="color:var(--accent)">📦 Archiv</a>
+  Stand 10.05.2026 · <a href="index.html" style="color:var(--accent)">← Zurück zur Immobiliensuche</a>
 </footer>
 <script>
 const LS_KEY='immo_read_ids';
-let readIds=new Set(),hideRead=true;
-async function initReadState(){
+let readIds=new Set();
+async function init(){
   try{const r=await fetch('read.json?t='+Date.now());const d=await r.json();if(d.read)d.read.forEach(id=>readIds.add(id))}catch(e){}
   try{JSON.parse(localStorage.getItem(LS_KEY)||'[]').forEach(id=>readIds.add(id))}catch(e){}
-  applyReadState();updateStats();
+  applyFilters();
 }
-function applyReadState(){
-  document.querySelectorAll('.card').forEach(c=>{
-    const id=c.dataset.id,btn=c.querySelector('.read-btn');
-    if(readIds.has(id)){c.classList.add('read');btn.classList.add('checked');btn.textContent='✓'}
-    else{c.classList.remove('read');btn.classList.remove('checked');btn.textContent='○'}
-    c.style.display=(hideRead&&readIds.has(id))?'none':'';
+function applyFilters(){
+  const cards=document.querySelectorAll('.card');
+  let count=0;
+  cards.forEach(c=>{
+    if(readIds.has(c.dataset.id)){
+      c.style.display='';
+      c.classList.add('read');
+      count++;
+    }else{
+      c.style.display='none';
+    }
   });
+  document.getElementById('stat-count').textContent=count;
+  if(count===0){
+    let msg=document.getElementById('empty-msg');
+    if(!msg){
+      msg=document.createElement('div');
+      msg.id='empty-msg';
+      msg.className='empty-msg';
+      msg.innerHTML='Keine archivierten Eintr\u00e4ge.<br><a href=\"index.html\" style=\"color:var(--accent)\">\u2190 Zur\u00fcck zur Suche</a>';
+      document.querySelector('.container').appendChild(msg);
+    }
+  }
 }
-function toggleRead(id,btn){
-  readIds.has(id)?readIds.delete(id):readIds.add(id);
+function markAllUnread(){
+  document.querySelectorAll('.card').forEach(c=>readIds.delete(c.dataset.id));
   localStorage.setItem(LS_KEY,JSON.stringify([...readIds]));
-  applyReadState();updateStats();
+  applyFilters();
 }
-function markAll(a){
-  document.querySelectorAll('.card').forEach(c=>a==='read'?readIds.add(c.dataset.id):readIds.delete(c.dataset.id));
-  localStorage.setItem(LS_KEY,JSON.stringify([...readIds]));
-  applyReadState();updateStats();
-}
-function toggleShowRead(){
-  hideRead=!hideRead;
-  const b=document.getElementById('btn-show-read');
-  hideRead?(b.classList.add('active'),b.innerHTML='👁️ Gelesene ausgeblendet'):(b.classList.remove('active'),b.innerHTML='👁️ Gelesene ausblenden');
-  applyReadState();
-}
-function updateStats(){
-  const t=document.querySelectorAll('.card').length,u=t-readIds.size;
-  document.getElementById('stat-new').querySelector('.stat-num').textContent=u;
-  const aEl=document.getElementById('archive-count');if(aEl)aEl.textContent=readIds.size;
-  const statA=document.getElementById('stat-archive');if(statA)statA.querySelector('.stat-num').textContent=readIds.size;
-}
-initReadState();
+init();
 </script>
 </body>
 </html>
