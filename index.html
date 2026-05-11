@@ -113,6 +113,30 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 .stadtteil-badge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:10px;background:rgba(255,255,255,0.08);color:#a0a0b8;margin-right:4px}
 .alter-info{font-size:10px;color:#6a6a7a}
 .card-extras{padding:0 12px 4px 12px;display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+
+.broker-section{margin:52px 0 14px}
+.broker-title{
+  font-size:18px;font-weight:700;padding:10px 16px;border-radius:var(--radius-sm);
+  margin-bottom:20px;display:flex;align-items:center;gap:10px;letter-spacing:-0.3px;
+  background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.22)
+}
+.broker-title .dot{width:10px;height:10px;border-radius:50%;background:#a78bfa}
+.broker-title small{color:var(--muted);font-size:14px;font-weight:500}
+.broker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.broker-card{
+  background:var(--card);border:1px solid var(--border);border-left:3px solid #a78bfa;
+  border-radius:var(--radius);padding:14px 14px 12px;transition:all .25s;min-height:142px;
+  display:flex;flex-direction:column;justify-content:space-between
+}
+.broker-card:hover{transform:translateY(-2px);border-color:#4a3f6f;box-shadow:0 8px 30px rgba(0,0,0,.28)}
+.broker-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:8px}
+.broker-name{font-size:15px;font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.2px}
+.broker-seat{font-size:10px;padding:3px 8px;border-radius:999px;background:rgba(167,139,250,.14);color:#c4b5fd;white-space:nowrap;font-weight:700;text-transform:uppercase;letter-spacing:.35px}
+.broker-detail{font-size:12px;color:#c0c0d0;line-height:1.35;margin-bottom:7px}
+.broker-focus{font-size:11px;color:var(--muted);line-height:1.35;margin-bottom:12px}
+.broker-link{font-size:12px;color:#a78bfa;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.broker-link:hover{color:#c4b5fd}
+.broker-note{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.45;text-align:center}
 </style>
 </head>
 <body>
@@ -123,12 +147,14 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
     <div class="stat" id="stat-new"><div class="stat-num">19</div><div class="stat-label">Ungelesen</div></div>
     <div class="stat" id="stat-archive"><div class="stat-num" style="color:var(--muted)">0</div><div class="stat-label">Archiv</div></div>
     <div class="stat"><div class="stat-num">3</div><div class="stat-label">Städte</div></div>
+    <div class="stat"><div class="stat-num">21</div><div class="stat-label">Makler</div></div>
     <div class="stat"><div class="stat-num">770K</div><div class="stat-label">Max Preis €</div></div>
   </div>
   <div class="toolbar">
     <button class="btn" onclick="markAll('read')">✅ Alle gelesen</button>
     <button class="btn" onclick="markAll('unread')">🔄 Alle ungelesen</button>
     <button class="btn active" id="btn-show-read" onclick="toggleShowRead()">👁️ Gelesene ausgeblendet</button>
+    <a href="#makler" class="nav-link">🏢 Makler</a>
     <a href="archive.html" class="nav-link">📦 Archiv <span class="archive-badge" id="archive-count">0</span></a>
   </div>
 </header>
@@ -468,9 +494,248 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
     </div>
   </div>
 
+
+<section class="broker-section" id="makler">
+  <div class="broker-title"><span class="dot"></span>🏢 Makler im Suchgebiet · <small>21 Kontakte</small></div>
+  <div class="broker-grid">
+    <a class="broker-card" href="https://www.fvb-immo.de" target="_blank" rel="noopener" data-broker="FVB Immo" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">FVB Immo</div>
+          <div class="broker-seat">Obertshausen</div>
+        </div>
+        <div class="broker-detail">Filialen Karben · Bad Vilbel · Hofheim</div>
+        <div class="broker-focus">Top-Kontakt / Volksbank Rhein-Main</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.missalla-immobilien.de" target="_blank" rel="noopener" data-broker="Missalla Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Missalla Immobilien</div>
+          <div class="broker-seat">Karben</div>
+        </div>
+        <div class="broker-detail">Rendeler Str. 5c · 61184 Karben</div>
+        <div class="broker-focus">Karben · Bad Vilbel · Wetterau</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://vonschluetterimmobilien.de" target="_blank" rel="noopener" data-broker="von Schlütter Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">von Schlütter Immobilien</div>
+          <div class="broker-seat">Bad Vilbel</div>
+        </div>
+        <div class="broker-detail">Niddaplatz 1 · 61118 Bad Vilbel</div>
+        <div class="broker-focus">Bad Vilbel · Karben · Vermietung/Kauf</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://andrea-ditzel-immobilien.de" target="_blank" rel="noopener" data-broker="Andrea Ditzel Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Andrea Ditzel Immobilien</div>
+          <div class="broker-seat">Bad Vilbel</div>
+        </div>
+        <div class="broker-detail">Frankfurter Straße 135 · 61118 Bad Vilbel</div>
+        <div class="broker-focus">Bad Vilbel · Heilsberg · Dortelweil</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://hwhimmo.de" target="_blank" rel="noopener" data-broker="HWH Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">HWH Immobilien</div>
+          <div class="broker-seat">Bad Vilbel</div>
+        </div>
+        <div class="broker-detail">Friedberger Straße 102 · 61118 Bad Vilbel</div>
+        <div class="broker-focus">Bad Vilbel · Karben</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://diehl-immobilien-bv.de" target="_blank" rel="noopener" data-broker="Diehl Immobilien BV" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Diehl Immobilien BV</div>
+          <div class="broker-seat">Bad Vilbel</div>
+        </div>
+        <div class="broker-detail">Schützenstraße 9 · 61118 Bad Vilbel</div>
+        <div class="broker-focus">Bad Vilbel · Karben · Rendel</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://ac-immocenter.de" target="_blank" rel="noopener" data-broker="AC Immocenter" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">AC Immocenter</div>
+          <div class="broker-seat">Bad Vilbel</div>
+        </div>
+        <div class="broker-detail">Bachwiesenstraße 1 · 61118 Bad Vilbel</div>
+        <div class="broker-focus">Bad Vilbel</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.dornbusch-immobilien.de" target="_blank" rel="noopener" data-broker="Dornbusch Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Dornbusch Immobilien</div>
+          <div class="broker-seat">Frankfurt am Main</div>
+        </div>
+        <div class="broker-detail">Am Dornbusch 1 · 60320 Frankfurt</div>
+        <div class="broker-focus">Frankfurt · Bad Vilbel-Umland</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://citaimmobilien.de" target="_blank" rel="noopener" data-broker="Cita Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Cita Immobilien</div>
+          <div class="broker-seat">Frankfurt am Main</div>
+        </div>
+        <div class="broker-detail">Berner Straße 53 · 60437 Frankfurt</div>
+        <div class="broker-focus">Frankfurt-Nord · Rhein-Main</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.immobilien-hornung.de" target="_blank" rel="noopener" data-broker="Immobilien Hornung" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Immobilien Hornung</div>
+          <div class="broker-seat">Hanau</div>
+        </div>
+        <div class="broker-detail">Wilhelm-Fischer-Straße 18 · 63454 Hanau</div>
+        <div class="broker-focus">Rhein-Main · Karben/BV im Suchgebiet</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.roesnerundpartner.de" target="_blank" rel="noopener" data-broker="Rösner &amp; Partner" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Rösner &amp; Partner</div>
+          <div class="broker-seat">Hofheim am Taunus</div>
+        </div>
+        <div class="broker-detail">Schoppastraße 4 · 65719 Hofheim</div>
+        <div class="broker-focus">Hofheim · Main-Taunus</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.orban-partner.de" target="_blank" rel="noopener" data-broker="Orban &amp; Partner" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Orban &amp; Partner</div>
+          <div class="broker-seat">Hofheim am Taunus</div>
+        </div>
+        <div class="broker-detail">Im Langgewann 14b · 65719 Hofheim</div>
+        <div class="broker-focus">Hofheim · Main-Taunus</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://hci-immobilien.de" target="_blank" rel="noopener" data-broker="HCI Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">HCI Immobilien</div>
+          <div class="broker-seat">Hofheim am Taunus</div>
+        </div>
+        <div class="broker-detail">Hauptstraße 47 · 65719 Hofheim</div>
+        <div class="broker-focus">Hofheim</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.skyline-immobilien.com" target="_blank" rel="noopener" data-broker="Skyline Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Skyline Immobilien</div>
+          <div class="broker-seat">Hofheim am Taunus</div>
+        </div>
+        <div class="broker-detail">Lorsbacher Straße 1a · 65719 Hofheim</div>
+        <div class="broker-focus">Hofheim · Lorsbach · Main-Taunus</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="http://www.ralf-weber-immobilien.de" target="_blank" rel="noopener" data-broker="Ralf Weber Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Ralf Weber Immobilien</div>
+          <div class="broker-seat">Hofheim am Taunus</div>
+        </div>
+        <div class="broker-detail">Hofheim · Website verweist auf Jimdo-Seite</div>
+        <div class="broker-focus">Hofheim</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://hochtaunus-immo.de" target="_blank" rel="noopener" data-broker="Hochtaunus Immo" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Hochtaunus Immo</div>
+          <div class="broker-seat">Schmitten</div>
+        </div>
+        <div class="broker-detail">61389 Schmitten</div>
+        <div class="broker-focus">Hochtaunus · Rhein-Main</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.vivat-immobilien.de" target="_blank" rel="noopener" data-broker="VIVAT Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">VIVAT Immobilien</div>
+          <div class="broker-seat">Bad Homburg</div>
+        </div>
+        <div class="broker-detail">Louisenstraße 133 · 61348 Bad Homburg</div>
+        <div class="broker-focus">Taunus · Wetterau</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.reile-immobilien.de" target="_blank" rel="noopener" data-broker="Reile Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Reile Immobilien</div>
+          <div class="broker-seat">Bad Nauheim</div>
+        </div>
+        <div class="broker-detail">Lessingstraße 5 · 61231 Bad Nauheim</div>
+        <div class="broker-focus">Bad Nauheim · Friedberg · Wetterau</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.dreher-immobilien.de" target="_blank" rel="noopener" data-broker="Dreher Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">Dreher Immobilien</div>
+          <div class="broker-seat">Bad Nauheim</div>
+        </div>
+        <div class="broker-detail">Franz-Groedel-Straße 6 · 61231 Bad Nauheim</div>
+        <div class="broker-focus">Bad Nauheim · Wetterau</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.kirano-immobilien.de" target="_blank" rel="noopener" data-broker="KIRANO Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">KIRANO Immobilien</div>
+          <div class="broker-seat">Bad Nauheim</div>
+        </div>
+        <div class="broker-detail">Franz-Groedel-Straße 7 · 61231 Bad Nauheim</div>
+        <div class="broker-focus">Bad Nauheim</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+    <a class="broker-card" href="https://www.sur-immobilien.de" target="_blank" rel="noopener" data-broker="SUR Immobilien" style="text-decoration:none;color:inherit">
+      <div>
+        <div class="broker-head">
+          <div class="broker-name">SUR Immobilien</div>
+          <div class="broker-seat">Friedberg</div>
+        </div>
+        <div class="broker-detail">Kaiserstraße 126 · 61169 Friedberg</div>
+        <div class="broker-focus">Friedberg · Wetterau</div>
+      </div>
+      <span class="broker-link">Maklerseite öffnen →</span>
+    </a>
+  </div>
+  <div class="broker-note">Hinweis: Webscan am 11.05.2026: keine sicheren neuen Treffer nach Kriterien gefunden. Die Liste dient als regionale Makler-Übersicht und Kontaktbasis für Off-Market-Angebote.</div>
+</section>
+
 </div>
 <footer class="footer">
-  Stand 10.05.2026 · Kriterien: 135–170 m² · max 770.000 € · kein Neubau/Fertighaus-Spam · <a href="archive.html" style="color:var(--accent)">📦 Archiv</a>
+  Stand 11.05.2026 · Kriterien: 135–170 m² · max 770.000 € · kein Neubau/Fertighaus-Spam · <a href="archive.html" style="color:var(--accent)">📦 Archiv</a>
 </footer>
 <script>
 const LS_KEY='immo_read_ids';
