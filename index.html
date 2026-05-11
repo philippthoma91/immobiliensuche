@@ -83,6 +83,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 }
 .badge-is24{background:rgba(108,138,255,0.15);color:var(--accent)}
 .badge-ka{background:rgba(255,108,138,0.12);color:var(--accent2)}
+.badge-imde{background:rgba(74,222,128,0.12);color:#4ade80}
 .card-link{
   font-size:12px;color:var(--accent);text-decoration:none;font-weight:500;
   display:flex;align-items:center;gap:4px;transition:color .15s;
@@ -90,6 +91,8 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 .card-link:hover{color:#8ba4ff}
 .card-link.ka{color:var(--accent2)}
 .card-link.ka:hover{color:#ff8a9e}
+.card-link.imde{color:#4ade80}
+.card-link.imde:hover{color:#6ee7a0}
 .read-btn{
   position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;
   border:2px solid var(--border);background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);
@@ -143,8 +146,8 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
 <header>
   <h1>🏠 <span>Immobiliensuche</span></h1>
   <div class="stats">
-    <div class="stat" id="stat-total"><div class="stat-num">19</div><div class="stat-label">Objekte</div></div>
-    <div class="stat" id="stat-new"><div class="stat-num">19</div><div class="stat-label">Ungelesen</div></div>
+    <div class="stat" id="stat-total"><div class="stat-num">21</div><div class="stat-label">Objekte</div></div>
+    <div class="stat" id="stat-new"><div class="stat-num">21</div><div class="stat-label">Ungelesen</div></div>
     <div class="stat" id="stat-archive"><div class="stat-num" style="color:var(--muted)">0</div><div class="stat-label">Archiv</div></div>
     <div class="stat"><div class="stat-num">3</div><div class="stat-label">Städte</div></div>
     <div class="stat"><div class="stat-num">21</div><div class="stat-label">Makler</div></div>
@@ -407,7 +410,7 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
   </div>
 
 <div class="city-section">
-<div class="city-title c-hofheim"><span class="dot"></span>🌄 Hofheim · <span style="color:var(--muted);font-size:14px">5 Objekte</span></div>
+<div class="city-title c-hofheim"><span class="dot"></span>🌄 Hofheim · <span style="color:var(--muted);font-size:14px">7 Objekte</span></div>
 <div class="grid">
 
       <div class="card hofheim" data-id="166955601">
@@ -489,6 +492,40 @@ header h1 span{background:linear-gradient(135deg,#6c8aff,#a78bfa);-webkit-backgr
                 <div class="card-bottom">
           <span class="source-badge badge-is24">IS24</span>
           <a href="https://www.immobilienscout24.de/expose/151591929" target="_blank" rel="noopener" class="card-link ">Zum Angebot →</a>
+        </div>
+      </div>
+      <div class="card hofheim" data-id="imde-9546281">
+        <button class="read-btn" onclick="toggleRead('imde-9546281',this)" title="Gelesen">○</button>
+        <div class="card-top">
+          <div class="card-img"><div class="no-img">🏠</div></div>
+          <div class="card-info">
+            <div class="card-price">527.000 €</div>
+            <div class="card-details">📐 156 m² · 🛏️ 6 Zi.</div>
+            <div class="card-title">HOFHEIM: RENOVIERTES EFH MIT 6 ZIMMERN, 2 BÄDERN, 2 KÜCHEN, GARAGE UND CARPORT</div>
+          </div>
+        </div>
+
+          <div class="card-extras"><span class="alter-info">🕐 Immobilien.de</span></div>
+                <div class="card-bottom">
+          <span class="source-badge badge-imde">IM-DE</span>
+          <a href="https://www.immobilien.de/wohnen/9546281" target="_blank" rel="noopener" class="card-link imde">Zum Angebot →</a>
+        </div>
+      </div>
+      <div class="card hofheim" data-id="imde-9543991">
+        <button class="read-btn" onclick="toggleRead('imde-9543991',this)" title="Gelesen">○</button>
+        <div class="card-top">
+          <div class="card-img"><div class="no-img">🏠</div></div>
+          <div class="card-info">
+            <div class="card-price">765.995 €</div>
+            <div class="card-details">📐 145 m² · 🛏️ 4 Zi.</div>
+            <div class="card-title">Modernes Einfamilienhaus mit Wohlfühlambiente im schönen Hofheim</div>
+          </div>
+        </div>
+
+          <div class="card-extras"><span class="alter-info">🕐 Immobilien.de</span></div>
+                <div class="card-bottom">
+          <span class="source-badge badge-imde">IM-DE</span>
+          <a href="https://www.immobilien.de/wohnen/9543991" target="_blank" rel="noopener" class="card-link imde">Zum Angebot →</a>
         </div>
       </div>
     </div>
